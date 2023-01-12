@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Your Reaction</string>
     <string name="start_game">Играть</string>
+    <string name="difficulty_levels">Выбирите уровень сложности</string>
     <string name="start_round_easy">Лёгкий</string>
     <string name="start_round_regular">Обычный</string>
     <string name="start_round_normal">Нормальный</string>
