@@ -38,7 +38,7 @@
                 android:id="@+id/start_round1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="@string/start_round_1" />
         </LinearLayout>
 
@@ -58,7 +58,7 @@
                 android:id="@+id/start_round2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="@string/start_round_2" />
         </LinearLayout>
 
@@ -78,7 +78,7 @@
                 android:id="@+id/start_round3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="@string/start_round_3" />
         </LinearLayout>
 
@@ -98,7 +98,7 @@
                 android:id="@+id/start_round4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="@string/start_round_4" />
         </LinearLayout>
 
