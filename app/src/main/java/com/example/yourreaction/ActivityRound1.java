@@ -14,11 +14,13 @@ public class ActivityRound1 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round1);
 
-        PlayingField pf1 = new PlayingField();
         Button buttonStart = findViewById(R.id.start);
-        buttonStart.setOnClickListener(new View.OnClickListener() {
+
+        buttonStart.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
 
             }
         });

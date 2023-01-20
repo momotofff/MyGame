@@ -24,23 +24,32 @@
             android:id="@+id/startGame"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="@string/start_game" />
+            android:layout_margin="5dp"
+            android:backgroundTint="#1E4278"
+            android:text="@string/start_game"
+            android:textSize="34sp"
+            app:cornerRadius="20dp"
+            app:rippleColor="#FF6600" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/startedText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#1A1E4278"
                     android:text="@string/bigSizeText"
-                    android:textSize="24sp" />
+                    android:textColor="#1E4278"
+                    android:textSize="24sp"
+                    android:textStyle="bold|italic" />
             </LinearLayout>
         </ScrollView>
 

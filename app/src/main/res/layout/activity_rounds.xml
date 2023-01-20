@@ -10,6 +10,7 @@
         android:id="@+id/difficulty_rounds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
@@ -17,89 +18,144 @@
             android:id="@+id/difficulty_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="@string/difficulty_levels"
             android:textAlignment="center"
+            android:textColor="#1E4278"
             android:textSize="34sp"
+            android:textStyle="bold|italic"
             android:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/result_round1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/zaglushka" />
+                android:shadowColor="#000000"
+                android:shadowDx="10"
+                android:shadowDy="10"
+                android:shadowRadius="20"
+                android:text="@string/zaglushka"
+                android:textColor="#1E4278"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/start_round1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="@string/start_round_1" />
+                android:layout_margin="5dp"
+                android:layout_weight="3"
+                android:backgroundTint="#1E4278"
+                android:text="@string/start_round_1"
+                app:cornerRadius="10dp"
+                app:rippleColor="#FF6600" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/result_round2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/zaglushka" />
+                android:shadowColor="#000000"
+                android:shadowDx="10"
+                android:shadowDy="10"
+                android:shadowRadius="20"
+                android:text="@string/zaglushka"
+                android:textColor="#1E4278"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/start_round2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="@string/start_round_2" />
+                android:layout_margin="5dp"
+                android:layout_weight="3"
+                android:backgroundTint="#1E4278"
+                android:text="@string/start_round_2"
+                app:cornerRadius="10dp"
+                app:rippleColor="#FF6600" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/result_round3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/zaglushka" />
+                android:shadowColor="#000000"
+                android:shadowDx="10"
+                android:shadowDy="10"
+                android:shadowRadius="20"
+                android:text="@string/zaglushka"
+                android:textColor="#1E4278"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/start_round3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="@string/start_round_3" />
+                android:layout_margin="5dp"
+                android:layout_weight="3"
+                android:backgroundTint="#1E4278"
+                android:text="@string/start_round_3"
+                app:cornerRadius="10dp"
+                app:rippleColor="#FF6600" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/result_round4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/zaglushka" />
+                android:shadowColor="#000000"
+                android:shadowDx="10"
+                android:shadowDy="10"
+                android:shadowRadius="20"
+                android:text="@string/zaglushka"
+                android:textColor="#1E4278"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/start_round4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="@string/start_round_4" />
+                android:layout_margin="5dp"
+                android:layout_weight="3"
+                android:backgroundTint="#1E4278"
+                android:text="@string/start_round_4"
+                app:cornerRadius="10dp"
+                app:rippleColor="#FF6600" />
         </LinearLayout>
 
     </LinearLayout>

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class RoundsActivity extends AppCompatActivity {
+public class RoundsActivity extends AppCompatActivity
+{
+    int[] timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -14,7 +16,10 @@ public class RoundsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rounds);
 
+        timer = TimerClass.getTimer();
         Button startGame = findViewById(R.id.start_round1);
+
+
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
