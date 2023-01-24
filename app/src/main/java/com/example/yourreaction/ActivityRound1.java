@@ -21,7 +21,11 @@ public class ActivityRound1 extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
+                for (int i = 0; i < 10; ++i)
+                {
+                    Button klick = findViewById(R.id.buttonWin);
 
+                }
             }
         });
     }
