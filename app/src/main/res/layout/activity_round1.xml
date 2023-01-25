@@ -17,7 +17,7 @@
       app:layout_constraintTop_toTopOf="parent">
 
     <Button
-        android:id="@+id/start"
+        android:id="@+id/buttonStart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -35,6 +35,7 @@
         android:orientation="horizontal">
 
       <LinearLayout
+          android:id="@+id/results"
           android:layout_width="100dp"
           android:layout_height="match_parent"
           android:layout_margin="25dp"
@@ -134,18 +135,21 @@
       </LinearLayout>
 
       <Button
-          android:id="@+id/buttonWin"
+          android:id="@+id/buttonTap"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:layout_margin="20dp"
           android:backgroundTint="#FF6600"
+          android:clickable="false"
+          android:onClick="tap"
           android:shadowColor="#1E4278"
           android:text="@string/play"
           android:textSize="34sp"
           android:textStyle="bold"
           app:cornerRadius="25dp"
           app:rippleColor="#1E4278"
-          tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+          tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
+          tools:visibility="visible" />
 
     </LinearLayout>
 
