@@ -10,7 +10,7 @@ public class TimerClass
         timeSleep = new int[10];
         for (int i = 0; i < timeSleep.length; ++i)
         {
-            timeSleep[i] = (int) (Math.random() * 10000);
+            timeSleep[i] = (int) (Math.random() * 1000);
         }
     }
 
