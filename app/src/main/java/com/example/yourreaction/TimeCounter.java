@@ -2,13 +2,11 @@ package com.example.yourreaction;
 
 public class TimeCounter
 {
-    static long start;
-    static long end;
+    long start;
+    long end;
 
-    public static void start() {
-        start = System.currentTimeMillis();
-    }
-    public static void finish() { end = System.currentTimeMillis(); }
-    public static long getLeadTime() { return end - start; }
-    public static void reset() { start = 0; end = 0; }
+    public void start() { start = System.currentTimeMillis();}
+    public void finish() { end = System.currentTimeMillis(); }
+    public long getLeadTime() { return end - start; }
+    public void reset() { start = 0; end = 0; }
 }

@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActivityRound1">
@@ -19,9 +19,14 @@
     <Button
         android:id="@+id/buttonStart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="10"
         android:backgroundTint="#1E4278"
         android:text="@string/start"
         android:textSize="34sp"
@@ -30,117 +35,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
         android:orientation="horizontal">
 
-      <LinearLayout
+      <ListView
           android:id="@+id/results"
-          android:layout_width="100dp"
+          android:layout_width="150dp"
           android:layout_height="match_parent"
-          android:layout_margin="25dp"
-          android:background="#1A1E4278"
-          android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/res0"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/zaglushka"
-            android:textAlignment="center"
-            android:textColor="#616161" />
-
-        <TextView
-            android:id="@+id/res1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/zaglushka"
-            android:textAlignment="center"
-            android:textColor="#616161" />
-
-        <TextView
-            android:id="@+id/res2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/zaglushka"
-            android:textAlignment="center"
-            android:textColor="#616161" />
-
-        <TextView
-            android:id="@+id/res3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/zaglushka"
-            android:textAlignment="center"
-            android:textColor="#616161" />
-
-        <TextView
-            android:id="@+id/res4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/zaglushka"
-            android:textAlignment="center"
-            android:textColor="#616161" />
-
-        <TextView
-            android:id="@+id/res5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/zaglushka"
-            android:textAlignment="center"
-            android:textColor="#616161" />
-
-        <TextView
-            android:id="@+id/res6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/zaglushka"
-            android:textAlignment="center"
-            android:textColor="#616161" />
-
-        <TextView
-            android:id="@+id/res7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/zaglushka"
-            android:textAlignment="center"
-            android:textColor="#616161" />
-
-        <TextView
-            android:id="@+id/res8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/zaglushka"
-            android:textAlignment="center"
-            android:textColor="#616161" />
-
-        <TextView
-            android:id="@+id/res9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/zaglushka"
-            android:textAlignment="center"
-            android:textColor="#616161" />
-
-      </LinearLayout>
+          android:scrollbarAlwaysDrawHorizontalTrack="false"
+          android:scrollbarAlwaysDrawVerticalTrack="false"
+          android:scrollbarSize="4dp"
+          android:scrollbars="none" />
 
       <Button
           android:id="@+id/buttonTap"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:layout_margin="20dp"
+          android:layout_margin="5dp"
+          android:layout_weight="0"
           android:backgroundTint="#FF6600"
-          android:clickable="false"
+          android:enabled="false"
           android:onClick="tap"
           android:shadowColor="#1E4278"
           android:text="@string/play"
@@ -150,14 +65,13 @@
           app:rippleColor="#1E4278"
           tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
           tools:visibility="visible" />
-
     </LinearLayout>
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
         android:text="@string/help"
         android:textAlignment="center"
         android:textColor="#1E4278"
@@ -165,4 +79,5 @@
         android:textStyle="bold" />
 
   </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
