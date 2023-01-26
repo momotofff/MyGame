@@ -5,10 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class RoundsActivity extends AppCompatActivity
 {
-    int[] timer;
+    int[] timeSleep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -16,15 +17,16 @@ public class RoundsActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rounds);
 
-        timer = TimerClass.getTimer();
         Button startGame = findViewById(R.id.start_round1);
+        timeSleep = TimerClass.getTimer();
 
-
-        startGame.setOnClickListener(new View.OnClickListener() {
+        startGame.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
                 Intent intent = new Intent(RoundsActivity.this, ActivityRound1.class);
+                intent.putExtra("name", timeSleep);
                 startActivity(intent);
             }
         });

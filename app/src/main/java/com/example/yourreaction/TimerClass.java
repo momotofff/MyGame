@@ -2,6 +2,7 @@ package com.example.yourreaction;
 
 public class TimerClass
 {
+    private static TimerClass instance;
     private static int[] timeSleep ;
 
     private TimerClass()
@@ -9,13 +10,14 @@ public class TimerClass
         timeSleep = new int[10];
         for (int i = 0; i < timeSleep.length; ++i)
         {
-            timeSleep[i] = (int) (Math.random() * 3000);
+            timeSleep[i] = (int) (Math.random() * 10000);
         }
     }
 
     public static int[] getTimer()
     {
-        TimerClass instance = new TimerClass();
+        instance = new TimerClass();
+
         return timeSleep;
     }
 }
