@@ -1,5 +1,6 @@
 package com.example.yourreaction;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -9,28 +10,26 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
-// TODO: Add false start processing
-// TODO: Add results processing (min, max, avg, median maybe?)
-// TODO: Show first screen only at first run
-
-public class ActivityRound1 extends AppCompatActivity
+public class ActivityRound2 extends AppCompatActivity
 {
     Button buttonStart;
-    Button buttonTap;
+    Button buttonTap1, buttonTap2;
     ListView lvResults;
 
     final ArrayList<Long> times = new ArrayList<>();
     final TimeCounter timeCounter = new TimeCounter();
     final int TriesCount = 10;
 
+    @SuppressLint("`MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_round1);
+        setContentView(R.layout.activity_round2);
 
         buttonStart = findViewById(R.id.buttonStart);
-        buttonTap = findViewById(R.id.buttonTap2);
+        buttonTap1 = findViewById(R.id.buttonTap1);
+        buttonTap2 = findViewById(R.id.buttonTap2);
 
         lvResults = findViewById(R.id.results);
         final ArrayAdapter<Long> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, times);
@@ -42,7 +41,8 @@ public class ActivityRound1 extends AppCompatActivity
             public void onClick(View view)
             {
                 buttonStart.setEnabled(false);
-                buttonTap.setEnabled(true);
+                buttonTap1.setEnabled(true);
+                buttonTap2.setEnabled(true);
 
                 times.clear();
                 adapter.notifyDataSetChanged();
@@ -51,7 +51,7 @@ public class ActivityRound1 extends AppCompatActivity
             }
         });
 
-        buttonTap.setOnClickListener(new View.OnClickListener()
+        buttonTap1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -64,7 +64,7 @@ public class ActivityRound1 extends AppCompatActivity
                 if (times.size() >= TriesCount)
                 {
                     buttonStart.setEnabled(true);
-                    buttonTap.setEnabled(false);
+                    buttonTap1.setEnabled(false);
                     return;
                 }
 
@@ -73,18 +73,38 @@ public class ActivityRound1 extends AppCompatActivity
         });
     }
 
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view)
+        {
+            switch (view.getId())
+            {
+                case R.id.buttonTap1:
+                    ;
+                case R.id.buttonTap2:
+                    ;
+            }
+
+        }
+    };
+
     private void beginNewRound()
     {
-        buttonTap.setVisibility(View.INVISIBLE);
+        buttonTap1.setVisibility(View.INVISIBLE);
 
         new Handler().postDelayed(new Runnable()
         {
             @Override
             public void run()
             {
-                buttonTap.setVisibility(View.VISIBLE);
+                buttonTap1.setVisibility(View.VISIBLE);
                 timeCounter.start();
             }
         }, (int) (3000 * Math.random() + 500));
+    }
+
+    private void buttonsTaps()
+    {
+
     }
 }

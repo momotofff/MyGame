@@ -8,15 +8,20 @@ import android.widget.Button;
 
 public class RoundsActivity extends AppCompatActivity
 {
+    Button round1, round2, round3, round4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rounds);
 
-        Button startGame = findViewById(R.id.start_round1);
+        round1 = findViewById(R.id.start_round1);
+        round2 = findViewById(R.id.start_round2);
+        round3 = findViewById(R.id.start_round3);
+        round4 = findViewById(R.id.start_round4);
 
-        startGame.setOnClickListener(new View.OnClickListener()
+        round1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
