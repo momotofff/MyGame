@@ -35,58 +35,57 @@ public class ActivityRound2 extends AppCompatActivity
         final ArrayAdapter<Long> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, times);
         lvResults.setAdapter(adapter);
 
-        buttonStart.setOnClickListener(new View.OnClickListener()
+        View.OnClickListener onClickListener = new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                buttonStart.setEnabled(false);
-                buttonTap1.setEnabled(true);
-                buttonTap2.setEnabled(true);
-
-                times.clear();
-                adapter.notifyDataSetChanged();
-
-                beginNewRound();
-            }
-        });
-
-        buttonTap1.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                timeCounter.finish();
-                times.add(timeCounter.getLeadTime());
-                adapter.notifyDataSetChanged();
-                timeCounter.reset();
-
-                if (times.size() >= TriesCount)
+                switch (view.getId())
                 {
-                    buttonStart.setEnabled(true);
-                    buttonTap1.setEnabled(false);
-                    return;
-                }
+                    case R.id.buttonTap1:
+                        timeCounter.finish();
+                        times.add(timeCounter.getLeadTime());
+                        adapter.notifyDataSetChanged();
+                        timeCounter.reset();
 
-                beginNewRound();
+                        if (times.size() >= TriesCount)
+                        {
+                            buttonStart.setEnabled(true);
+                            buttonTap1.setEnabled(false);
+                            return;
+                        }
+
+                        beginNewRound();
+
+                    case R.id.buttonTap2:
+                        timeCounter.finish();
+                        times.add(timeCounter.getLeadTime());
+                        adapter.notifyDataSetChanged();
+                        timeCounter.reset();
+
+                        if (times.size() >= TriesCount)
+                        {
+                            buttonStart.setEnabled(true);
+                            buttonTap1.setEnabled(false);
+                            return;
+                        }
+
+                        beginNewRound();
+                    case R.id.buttonStart:
+                        buttonStart.setEnabled(false);
+                        buttonTap1.setEnabled(true);
+                        buttonTap2.setEnabled(true);
+
+                        times.clear();
+                        adapter.notifyDataSetChanged();
+
+                        beginNewRound();
+                }
             }
-        });
+        };
     }
 
-    View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view)
-        {
-            switch (view.getId())
-            {
-                case R.id.buttonTap1:
-                    ;
-                case R.id.buttonTap2:
-                    ;
-            }
 
-        }
-    };
 
     private void beginNewRound()
     {
