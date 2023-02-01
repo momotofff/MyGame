@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ActivityRound1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/buttonStart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="10"
+                android:backgroundTint="#1E4278"
+                android:text="@string/start"
+                android:textSize="34sp"
+                app:cornerRadius="25dp"
+                app:rippleColor="#FF6600" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="horizontal">
+
+                <ListView
+                    android:id="@+id/results"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:scrollbarAlwaysDrawHorizontalTrack="false"
+                    android:scrollbarAlwaysDrawVerticalTrack="false"
+                    android:scrollbarSize="4dp"
+                    android:scrollbars="none" >
+
+                </ListView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/buttonTap1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#FF6600"
+                        android:enabled="false"
+                        android:onClick="tap"
+                        android:shadowColor="#1E4278"
+                        android:text="@string/play"
+                        android:textSize="34sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="25dp"
+                        app:rippleColor="#1E4278"
+                        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateSpeakableTextCheck"
+                        tools:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/buttonTap2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#FF6600"
+                        android:enabled="false"
+                        android:onClick="tap"
+                        android:shadowColor="#1E4278"
+                        android:text="@string/play"
+                        android:textSize="34sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="25dp"
+                        app:rippleColor="#1E4278"
+                        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
+                        tools:visibility="visible" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:text="@string/help"
+                android:textAlignment="center"
+                android:textColor="#1E4278"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

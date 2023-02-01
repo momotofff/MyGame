@@ -1,15 +1,12 @@
 package com.example.yourreaction;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 
 // TODO: Add false start processing
@@ -32,9 +29,8 @@ public class ActivityRound1 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round1);
 
-        Intent intent = getIntent();
         buttonStart = findViewById(R.id.buttonStart);
-        buttonTap = findViewById(R.id.buttonTap);
+        buttonTap = findViewById(R.id.buttonTap2);
 
         lvResults = findViewById(R.id.results);
         final ArrayAdapter<Long> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, times);
@@ -89,6 +85,6 @@ public class ActivityRound1 extends AppCompatActivity
                 buttonTap.setVisibility(View.VISIBLE);
                 timeCounter.start();
             }
-        },(int) (3000 * Math.random() + 500));
+        }, (int) (3000 * Math.random() + 500));
     }
 }

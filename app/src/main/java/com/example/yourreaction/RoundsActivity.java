@@ -1,6 +1,8 @@
 package com.example.yourreaction;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,22 +10,52 @@ import android.widget.Button;
 
 public class RoundsActivity extends AppCompatActivity
 {
+    Button round1, round2, round3, round4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rounds);
 
-        Button startGame = findViewById(R.id.start_round1);
+        round1 = findViewById(R.id.start_round1);
+        round2 = findViewById(R.id.start_round2);
+        round3 = findViewById(R.id.start_round3);
+        round4 = findViewById(R.id.start_round4);
 
-        startGame.setOnClickListener(new View.OnClickListener()
-        {
+        View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(RoundsActivity.this, ActivityRound1.class);
-                startActivity(intent);
+                switch (view.getId())
+                {
+                    case R.id.start_round1:
+                    {
+                        Intent intent = new Intent(RoundsActivity.this, ActivityRound1.class);
+                        startActivity(intent);
+                    }
+                    case R.id.start_round2:
+                    {
+                        Intent intent = new Intent(RoundsActivity.this, ActivityRound2.class);
+                        startActivity(intent);
+                    }
+                    case R.id.start_round3:
+                    {
+                        Intent intent = new Intent(RoundsActivity.this, ActivityRound3.class);
+                        startActivity(intent);
+                    }
+                    case R.id.start_round4:
+                    {
+                        Intent intent = new Intent(RoundsActivity.this, ActivityRound4.class);
+                        startActivity(intent);
+                    }
+                }
             }
-        });
+        };
+
+        round1.setOnClickListener(onClickListener);
+        round2.setOnClickListener(onClickListener);
+        round3.setOnClickListener(onClickListener);
+        round4.setOnClickListener(onClickListener);
     }
 }
