@@ -1,12 +1,15 @@
 package com.example.yourreaction;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
@@ -20,7 +23,6 @@ public class ActivityRound2 extends AppCompatActivity
     final TimeCounter timeCounter = new TimeCounter();
     final int TriesCount = 10;
 
-    @SuppressLint("`MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -42,36 +44,8 @@ public class ActivityRound2 extends AppCompatActivity
             {
                 switch (view.getId())
                 {
-                    case R.id.buttonTap1:
-                        timeCounter.finish();
-                        times.add(timeCounter.getLeadTime());
-                        adapter.notifyDataSetChanged();
-                        timeCounter.reset();
-
-                        if (times.size() >= TriesCount)
-                        {
-                            buttonStart.setEnabled(true);
-                            buttonTap1.setEnabled(false);
-                            return;
-                        }
-
-                        beginNewRound();
-
-                    case R.id.buttonTap2:
-                        timeCounter.finish();
-                        times.add(timeCounter.getLeadTime());
-                        adapter.notifyDataSetChanged();
-                        timeCounter.reset();
-
-                        if (times.size() >= TriesCount)
-                        {
-                            buttonStart.setEnabled(true);
-                            buttonTap1.setEnabled(false);
-                            return;
-                        }
-
-                        beginNewRound();
                     case R.id.buttonStart:
+                    {
                         buttonStart.setEnabled(false);
                         buttonTap1.setEnabled(true);
                         buttonTap2.setEnabled(true);
@@ -80,16 +54,59 @@ public class ActivityRound2 extends AppCompatActivity
                         adapter.notifyDataSetChanged();
 
                         beginNewRound();
+                        break;
+                    }
+                    case R.id.buttonTap1:
+                    {
+
+                        break;
+                    }
+                    case R.id.buttonTap2: {
+
+
+                        break;
+                    }
+
                 }
             }
         };
+
+        buttonStart.setOnClickListener(onClickListener);
+        buttonTap1.setOnClickListener(onClickListener);
+        buttonTap2.setOnClickListener(onClickListener);
+
+
+
+
+
+
+
+        buttonTap.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                timeCounter.finish();
+                times.add(timeCounter.getLeadTime());
+                adapter.notifyDataSetChanged();
+                timeCounter.reset();
+
+                if (times.size() >= TriesCount)
+                {
+                    buttonStart.setEnabled(true);
+                    buttonTap1.setEnabled(false);
+                    return;
+                }
+
+                beginNewRound();
+            }
+        });
     }
-
-
 
     private void beginNewRound()
     {
         buttonTap1.setVisibility(View.INVISIBLE);
+        buttonTap2.setVisibility(View.INVISIBLE);
 
         new Handler().postDelayed(new Runnable()
         {
@@ -100,10 +117,5 @@ public class ActivityRound2 extends AppCompatActivity
                 timeCounter.start();
             }
         }, (int) (3000 * Math.random() + 500));
-    }
-
-    private void buttonsTaps()
-    {
-
     }
 }
