@@ -16,6 +16,15 @@
             android:name=".ActivityRound1"
             android:exported="false" />
         <activity
+            android:name=".ActivityRound2"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityRound3"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityRound4"
+            android:exported="false" />
+        <activity
             android:name=".RoundsActivity"
             android:exported="false" >
             <meta-data
