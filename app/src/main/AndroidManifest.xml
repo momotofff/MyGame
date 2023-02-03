@@ -26,6 +26,9 @@
             android:exported="false" />
         <activity
             android:name=".RoundsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityWin"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
