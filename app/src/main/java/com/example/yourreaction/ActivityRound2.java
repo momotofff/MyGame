@@ -1,22 +1,19 @@
 package com.example.yourreaction;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class ActivityRound2 extends AppCompatActivity
 {
     Button buttonStart;
-    Button buttonTap1, buttonTap2;
+    Button[] buttonTapArray = new Button[2];
+    Button[] buttonTapArrayTransparent = new Button[2];
     ListView lvResults;
 
     final ArrayList<Long> times = new ArrayList<>();
@@ -29,9 +26,11 @@ public class ActivityRound2 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round2);
 
-        buttonStart = findViewById(R.id.buttonStart);
-        buttonTap1 = findViewById(R.id.buttonTap1);
-        buttonTap2 = findViewById(R.id.buttonTap2);
+        buttonStart = findViewById(R.id.buttonBack);
+        buttonTapArray[0] = findViewById(R.id.buttonTap1);
+        buttonTapArray[1] = findViewById(R.id.buttonTap2);
+        //buttonTapArrayTransparent[0] = findViewById(R.id.buttonTap1_1);
+        //buttonTapArrayTransparent[1] = findViewById(R.id.buttonTap2_2);
 
         lvResults = findViewById(R.id.results);
         final ArrayAdapter<Long> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, times);
@@ -44,11 +43,13 @@ public class ActivityRound2 extends AppCompatActivity
             {
                 switch (view.getId())
                 {
-                    case R.id.buttonStart:
+                    case R.id.buttonBack:
                     {
                         buttonStart.setEnabled(false);
-                        buttonTap1.setEnabled(true);
-                        buttonTap2.setEnabled(true);
+
+                        for (Button button : buttonTapArray)
+                            button.setEnabled(true);
+
 
                         times.clear();
                         adapter.notifyDataSetChanged();
@@ -57,63 +58,53 @@ public class ActivityRound2 extends AppCompatActivity
                         break;
                     }
                     case R.id.buttonTap1:
+                    case R.id.buttonTap2:
                     {
-
+                        buttonTap(adapter);
                         break;
                     }
-                    case R.id.buttonTap2: {
-
-
-                        break;
-                    }
-
                 }
             }
         };
 
         buttonStart.setOnClickListener(onClickListener);
-        buttonTap1.setOnClickListener(onClickListener);
-        buttonTap2.setOnClickListener(onClickListener);
 
+        for (Button button : buttonTapArray)
+            button.setOnClickListener(onClickListener);
+    }
 
+    private void buttonTap(ArrayAdapter<Long> adapter)
+    {
+        timeCounter.finish();
+        times.add(timeCounter.getLeadTime());
+        adapter.notifyDataSetChanged();
+        timeCounter.reset();
 
-
-
-
-
-        buttonTap.setOnClickListener(new View.OnClickListener()
+        if (times.size() >= TriesCount)
         {
-            @Override
-            public void onClick(View view)
-            {
-                timeCounter.finish();
-                times.add(timeCounter.getLeadTime());
-                adapter.notifyDataSetChanged();
-                timeCounter.reset();
+            buttonStart.setEnabled(true);
 
-                if (times.size() >= TriesCount)
-                {
-                    buttonStart.setEnabled(true);
-                    buttonTap1.setEnabled(false);
-                    return;
-                }
+            for (Button button : buttonTapArray)
+                button.setEnabled(false);
 
-                beginNewRound();
-            }
-        });
+            return;
+        }
+
+        beginNewRound();
     }
 
     private void beginNewRound()
     {
-        buttonTap1.setVisibility(View.INVISIBLE);
-        buttonTap2.setVisibility(View.INVISIBLE);
+        for (Button button : buttonTapArray)
+            button.setVisibility(View.INVISIBLE);
 
         new Handler().postDelayed(new Runnable()
         {
             @Override
             public void run()
             {
-                buttonTap1.setVisibility(View.VISIBLE);
+                int index = (int) (Math.random() * buttonTapArray.length);
+                buttonTapArray[index].setVisibility(View.VISIBLE);
                 timeCounter.start();
             }
         }, (int) (3000 * Math.random() + 500));

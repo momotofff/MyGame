@@ -17,7 +17,7 @@
       app:layout_constraintTop_toTopOf="parent">
 
     <Button
-        android:id="@+id/buttonStart"
+        android:id="@+id/buttonBack"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="5dp"
@@ -48,22 +48,46 @@
           android:scrollbarSize="4dp"
           android:scrollbars="none" />
 
-      <Button
-          android:id="@+id/buttonTap2"
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_margin="5dp"
-          android:layout_weight="1"
-          android:backgroundTint="#FF6600"
-          android:enabled="false"
-          android:shadowColor="#1E4278"
-          android:text="@string/play"
-          android:textSize="34sp"
-          android:textStyle="bold"
-          app:cornerRadius="25dp"
-          app:rippleColor="#1E4278"
-          tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
-          tools:visibility="visible" />
+      <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/buttonTap1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FF6600"
+            android:enabled="false"
+            android:shadowColor="#1E4278"
+            android:text="@string/play"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:cornerRadius="25dp"
+            app:rippleColor="#1E4278"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/buttonTap2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#0D1E4278"
+            android:enabled="false"
+            android:shadowColor="#1E4278"
+            android:text="@string/play"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:cornerRadius="25dp"
+            app:rippleColor="#1E4278"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
+            tools:visibility="visible" />
+
+      </FrameLayout>
+
     </LinearLayout>
 
     <TextView
