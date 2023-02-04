@@ -15,7 +15,6 @@ import java.util.ArrayList;
 // TODO: Add results processing (min, max, avg, median maybe?)
 // TODO: Show first screen only at first run
 // TODO: move all common game logic to separate class
-// TODO: represent game results as class fields also: times, false starts
 // TODO: Maybe it is a good idea to calc min/max/avg/etc in class, containing results?
 // TODO: Cover this class with unit tests bleat
 
@@ -28,7 +27,7 @@ public class ActivityRound1 extends AppCompatActivity
     ArrayAdapter<Long> adapter;
     boolean isCheater = false;
 
-    final ArrayList<Long> times = new ArrayList<>();
+    final GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
     final int TriesCount = 10;
 
@@ -43,7 +42,7 @@ public class ActivityRound1 extends AppCompatActivity
         buttonFalseStartCatcher[0] = findViewById(R.id.btnFalseStartCatcher);
 
         lvResults = findViewById(R.id.results);
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, times);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gameResult.times);
         lvResults.setAdapter(adapter);
 
         buttonStart.setOnClickListener(view -> onBtnStart());
@@ -65,7 +64,7 @@ public class ActivityRound1 extends AppCompatActivity
         for (Button button : buttonFalseStartCatcher)
             button.setEnabled(true);
 
-        times.clear();
+        gameResult.clear();
         adapter.notifyDataSetChanged();
 
         beginNewRound();
@@ -77,14 +76,14 @@ public class ActivityRound1 extends AppCompatActivity
 
         if (!isCheater)
         {
-            times.add(timeCounter.getLeadTime());
+            gameResult.times.add(timeCounter.getLeadTime());
             adapter.notifyDataSetChanged();
         }
 
         isCheater = false;
         timeCounter.reset();
 
-        if (times.size() >= TriesCount)
+        if (gameResult.times.size() >= TriesCount)
         {
             buttonStart.setEnabled(true);
 
@@ -103,6 +102,7 @@ public class ActivityRound1 extends AppCompatActivity
 
     private void onBtnFalseStart()
     {
+        ++gameResult.falseStarts;
         isCheater = true;
         Toast.makeText(getApplicationContext(),"Читак!", Toast.LENGTH_SHORT).show();
     }
