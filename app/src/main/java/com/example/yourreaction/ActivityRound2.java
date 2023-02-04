@@ -26,9 +26,9 @@ public class ActivityRound2 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round2);
 
-        buttonStart = findViewById(R.id.buttonBack);
-        buttonTapArray[0] = findViewById(R.id.buttonTap1);
-        buttonTapArray[1] = findViewById(R.id.buttonTap2);
+        buttonStart = findViewById(R.id.btnStart);
+        buttonTapArray[0] = findViewById(R.id.btnMain);
+        buttonTapArray[1] = findViewById(R.id.btnFalseStartCatcher);
         //buttonTapArrayTransparent[0] = findViewById(R.id.buttonTap1_1);
         //buttonTapArrayTransparent[1] = findViewById(R.id.buttonTap2_2);
 
@@ -43,7 +43,7 @@ public class ActivityRound2 extends AppCompatActivity
             {
                 switch (view.getId())
                 {
-                    case R.id.buttonBack:
+                    case R.id.btnStart:
                     {
                         buttonStart.setEnabled(false);
 
@@ -57,8 +57,8 @@ public class ActivityRound2 extends AppCompatActivity
                         beginNewRound();
                         break;
                     }
-                    case R.id.buttonTap1:
-                    case R.id.buttonTap2:
+                    case R.id.btnMain:
+                    case R.id.btnFalseStartCatcher:
                     {
                         buttonTap(adapter);
                         break;

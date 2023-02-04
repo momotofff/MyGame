@@ -1,6 +1,5 @@
 package com.example.yourreaction;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,116 +7,112 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
-import java.util.List;
 
-// TODO: Add false start processing
 // TODO: Add results processing (min, max, avg, median maybe?)
 // TODO: Show first screen only at first run
+// TODO: move all common game logic to separate class
+// TODO: represent game results as class fields also: times, false starts
+// TODO: Maybe it is a good idea to calc min/max/avg/etc in class, containing results?
+// TODO: Cover this class with unit tests bleat
 
 public class ActivityRound1 extends AppCompatActivity
 {
     Button buttonStart;
-    Button[] buttonTapArray = new Button[1];
-    Button[] buttonTapArrayTransparent = new Button[1];
+    Button[] buttonMain = new Button[1];
+    Button[] buttonFalseStartCatcher = new Button[1];
     ListView lvResults;
-    List<Boolean> isFail = new ArrayList<>();
+    ArrayAdapter<Long> adapter;
+    boolean isCheater = false;
 
     final ArrayList<Long> times = new ArrayList<>();
     final TimeCounter timeCounter = new TimeCounter();
     final int TriesCount = 10;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round1);
 
-        buttonStart = findViewById(R.id.buttonBack);
-        buttonTapArray[0] = findViewById(R.id.buttonTap1);
-        buttonTapArrayTransparent[0] = findViewById(R.id.buttonTap2);
+        buttonStart = findViewById(R.id.btnStart);
+        buttonMain[0] = findViewById(R.id.btnMain);
+        buttonFalseStartCatcher[0] = findViewById(R.id.btnFalseStartCatcher);
 
         lvResults = findViewById(R.id.results);
-        final ArrayAdapter<Long> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, times);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, times);
         lvResults.setAdapter(adapter);
 
-        View.OnClickListener onClickListener = new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                switch (view.getId())
-                {
-                    case R.id.buttonBack:
-                    {
-                        buttonStart.setEnabled(false);
+        buttonStart.setOnClickListener(view -> onBtnStart());
 
-                        for (Button button : buttonTapArray)
-                            button.setEnabled(true);
+        for (Button button : buttonMain)
+            button.setOnClickListener(view -> onBtnMain());
 
-                        for (Button button : buttonTapArrayTransparent)
-                            button.setEnabled(true);
-
-
-                        times.clear();
-                        adapter.notifyDataSetChanged();
-
-                        beginNewRound();
-                        break;
-                    }
-                    case R.id.buttonTap1:
-                    {
-                        buttonTap(adapter);
-                        break;
-                    }
-                    case R.id.buttonTap2:
-                    {
-                        isFail.add(times.size(), false);
-                        beginNewRound();
-                    }
-                }
-            }
-        };
-
-        buttonStart.setOnClickListener(onClickListener);
-
-        for (Button button : buttonTapArray)
-            button.setOnClickListener(onClickListener);
+        for (Button button : buttonFalseStartCatcher)
+            button.setOnClickListener(view -> onBtnFalseStart());
     }
 
-    private void buttonTap(ArrayAdapter<Long> adapter)
+    private void onBtnStart()
+    {
+        buttonStart.setEnabled(false);
+
+        for (Button button : buttonMain)
+            button.setEnabled(true);
+
+        for (Button button : buttonFalseStartCatcher)
+            button.setEnabled(true);
+
+        times.clear();
+        adapter.notifyDataSetChanged();
+
+        beginNewRound();
+    }
+
+    private void onBtnMain()
     {
         timeCounter.finish();
-        times.add(timeCounter.getLeadTime());
-        adapter.notifyDataSetChanged();
+
+        if (!isCheater)
+        {
+            times.add(timeCounter.getLeadTime());
+            adapter.notifyDataSetChanged();
+        }
+
+        isCheater = false;
         timeCounter.reset();
 
         if (times.size() >= TriesCount)
         {
             buttonStart.setEnabled(true);
 
-            for (Button button : buttonTapArray)
+            for (Button button : buttonMain)
                 button.setEnabled(false);
 
-            for (Button button : buttonTapArrayTransparent)
+            for (Button button : buttonFalseStartCatcher)
                 button.setEnabled(false);
 
-            Intent intent = new Intent(ActivityRound1.this, ActivityWin.class);
-            startActivity(intent);
+            startActivity(new Intent(ActivityRound1.this, ActivityWin.class));
             return;
         }
 
         beginNewRound();
     }
 
+    private void onBtnFalseStart()
+    {
+        isCheater = true;
+        Toast.makeText(getApplicationContext(),"Читак!", Toast.LENGTH_SHORT).show();
+    }
+
     private void beginNewRound()
     {
-        for (Button button : buttonTapArray)
+        for (Button button : buttonMain)
             button.setVisibility(View.INVISIBLE);
 
-        for (Button button : buttonTapArrayTransparent)
+        for (Button button : buttonFalseStartCatcher)
             button.setVisibility(View.VISIBLE);
 
         new Handler().postDelayed(new Runnable()
@@ -125,11 +120,11 @@ public class ActivityRound1 extends AppCompatActivity
             @Override
             public void run()
             {
-                int index = (int) (Math.random() * buttonTapArray.length);
-                buttonTapArray[index].setVisibility(View.VISIBLE);
-                buttonTapArrayTransparent[index].setVisibility(View.INVISIBLE);
+                int index = (int) (Math.random() * buttonMain.length);
+                buttonMain[index].setVisibility(View.VISIBLE);
+                buttonFalseStartCatcher[index].setVisibility(View.INVISIBLE);
                 timeCounter.start();
             }
-        }, (int) (1000 * Math.random()));
+        }, (int) (3000 * Math.random()) + 500);
     }
 }
