@@ -8,8 +8,8 @@
     tools:context=".ActivityWin">
 
     <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="359dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp"
         android:weightSum="4"
@@ -129,16 +129,18 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/FailTap" />
+                android:text="@string/FailTap"
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/countFalseClick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:text="@string/countFailTap"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="20sp" />
         </LinearLayout>
 
     </LinearLayout>

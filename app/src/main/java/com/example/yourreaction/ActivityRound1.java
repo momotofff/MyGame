@@ -8,9 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.ArrayList;
+
+import java.util.Collections;
 
 // TODO: Add results processing (min, max, avg, median maybe?)
 // TODO: Show first screen only at first run
@@ -93,12 +93,20 @@ public class ActivityRound1 extends AppCompatActivity
             for (Button button : buttonFalseStartCatcher)
                 button.setEnabled(false);
 
-            startActivity(new Intent(ActivityRound1.this, ActivityWin.class));
+            Collections.sort(gameResult.times);
+
+            startActivity(new Intent(ActivityRound1.this, ActivityWin.class).
+                                                  putExtra("avg", gameResult.avg(gameResult.times)).
+                                                  putExtra("max", gameResult.max()).
+                                                  putExtra("min", gameResult.min()).
+                                                  putExtra("falseStarts", gameResult.falseStarts));
             return;
         }
 
         beginNewRound();
     }
+
+
 
     private void onBtnFalseStart()
     {
@@ -125,6 +133,6 @@ public class ActivityRound1 extends AppCompatActivity
                 buttonFalseStartCatcher[index].setVisibility(View.INVISIBLE);
                 timeCounter.start();
             }
-        }, (int) (3000 * Math.random()) + 500);
+        }, (int) (Math.random()) + 500);
     }
 }
