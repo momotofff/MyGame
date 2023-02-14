@@ -25,7 +25,7 @@ public class ActivityWin extends AppCompatActivity
         min = findViewById(R.id.buttonMin);         min.setText(new StringBuilder(min.getText()).append(intent.getLongExtra("min", 0)));
         max = findViewById(R.id.buttonMax);         max.setText(new StringBuilder(max.getText()).append(intent.getLongExtra("max", 0)));
         avg = findViewById(R.id.buttonAvg);         avg.setText(new StringBuilder(avg.getText()).append(intent.getLongExtra("avg", 0)));
-        view = findViewById(R.id.countFalseClick);  view.setText(new StringBuilder((int) intent.getIntExtra("falseStarts", 0)));
+        view = findViewById(R.id.countFalseClick);  view.setText(new StringBuilder(view.getText()).append(intent.getIntExtra("falseStarts", 0)));
 
 
         findViewById(R.id.buttonRepeat).setOnClickListener(

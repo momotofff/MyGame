@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Collections;
 
 // TODO: Add results processing (min, max, avg, median maybe?)
@@ -29,7 +28,7 @@ public class ActivityRound1 extends AppCompatActivity
 
     final GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
-    final int TriesCount = 10;
+    final int TriesCount = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

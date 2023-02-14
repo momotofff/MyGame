@@ -5,6 +5,7 @@ public class GameResult
 {
     public ArrayList<Long> times = new ArrayList<>();
     public int falseStarts = 0;
+
     public void clear()
     {
         times.clear();
