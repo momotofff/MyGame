@@ -11,12 +11,15 @@ import android.widget.Toast;
 public class RoundsActivity extends AppCompatActivity
 {
     Button round1, round2, round3, round4;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rounds);
+
+        intent = getIntent();
 
         round1 = findViewById(R.id.start_round1);
         round2 = findViewById(R.id.start_round2);

@@ -1,5 +1,6 @@
 package com.example.yourreaction;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class GameResult
 {
@@ -14,6 +15,7 @@ public class GameResult
 
     public long avg(ArrayList<Long> times )
     {
+        Collections.sort(times);
         long result = 0;
 
         for (int i = 1; i < times.size() - 1; ++i)

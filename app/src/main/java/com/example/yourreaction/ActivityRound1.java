@@ -9,26 +9,26 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.Collections;
 
-// TODO: Add results processing (min, max, avg, median maybe?)
+
 // TODO: Show first screen only at first run
 // TODO: move all common game logic to separate class
-// TODO: Maybe it is a good idea to calc min/max/avg/etc in class, containing results?
 // TODO: Cover this class with unit tests bleat
 
 public class ActivityRound1 extends AppCompatActivity
 {
+    private Intent intent;
     Button buttonStart;
     Button[] buttonMain = new Button[1];
     Button[] buttonFalseStartCatcher = new Button[1];
     ListView lvResults;
     ArrayAdapter<Long> adapter;
     boolean isCheater = false;
-
+    String[] tips;
     final GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
     final int TriesCount = 5;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -39,7 +39,7 @@ public class ActivityRound1 extends AppCompatActivity
         buttonStart = findViewById(R.id.btnStart);
         buttonMain[0] = findViewById(R.id.btnMain);
         buttonFalseStartCatcher[0] = findViewById(R.id.btnFalseStartCatcher);
-
+        tips = getResources().getStringArray(R.array.FalseStartText);
         lvResults = findViewById(R.id.results);
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gameResult.times);
         lvResults.setAdapter(adapter);
@@ -92,26 +92,23 @@ public class ActivityRound1 extends AppCompatActivity
             for (Button button : buttonFalseStartCatcher)
                 button.setEnabled(false);
 
-            Collections.sort(gameResult.times);
-
             startActivity(new Intent(ActivityRound1.this, ActivityWin.class).
                                                   putExtra("avg", gameResult.avg(gameResult.times)).
                                                   putExtra("max", gameResult.max()).
                                                   putExtra("min", gameResult.min()).
-                                                  putExtra("falseStarts", gameResult.falseStarts));
+                                                  putExtra("falseStarts", gameResult.falseStarts).
+                                                  putExtra(ActivityRound1.class.getName(), (CharSequence) ActivityRound1.this));
             return;
         }
 
         beginNewRound();
     }
 
-
-
     private void onBtnFalseStart()
     {
         ++gameResult.falseStarts;
         isCheater = true;
-        Toast.makeText(getApplicationContext(),"Читак!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),tips[(int) (Math.random() * 5)], Toast.LENGTH_SHORT).show();
     }
 
     private void beginNewRound()
@@ -132,6 +129,6 @@ public class ActivityRound1 extends AppCompatActivity
                 buttonFalseStartCatcher[index].setVisibility(View.INVISIBLE);
                 timeCounter.start();
             }
-        }, (int) (Math.random()) + 500);
+        }, (int) ((Math.random()) * 3000 + 500));
     }
 }
