@@ -42,7 +42,6 @@
                 android:shadowDx="10"
                 android:shadowDy="10"
                 android:shadowRadius="20"
-                android:text="@string/zaglushka"
                 android:textColor="#1E4278"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -75,7 +74,6 @@
                 android:shadowDx="10"
                 android:shadowDy="10"
                 android:shadowRadius="20"
-                android:text="@string/zaglushka"
                 android:textColor="#1E4278"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -108,7 +106,6 @@
                 android:shadowDx="10"
                 android:shadowDy="10"
                 android:shadowRadius="20"
-                android:text="@string/zaglushka"
                 android:textColor="#1E4278"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -141,7 +138,6 @@
                 android:shadowDx="10"
                 android:shadowDy="10"
                 android:shadowRadius="20"
-                android:text="@string/zaglushka"
                 android:textColor="#1E4278"
                 android:textSize="16sp"
                 android:textStyle="bold" />

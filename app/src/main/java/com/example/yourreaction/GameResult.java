@@ -16,15 +16,16 @@ public class GameResult
     public long avg(ArrayList<Long> times )
     {
         Collections.sort(times);
+
         long result = 0;
 
         for (int i = 1; i < times.size() - 1; ++i)
         {
             result += (long) times.get(i);
         }
-        return result / 8;
+        return result / (times.size() - 2);
     }
 
     public long min() { return times.get(1);}
-    public long max() { return times.get(times.size() - 1);}
+    public long max() { return times.get(times.size() - 2);}
 }

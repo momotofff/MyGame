@@ -13,6 +13,7 @@ public class ActivityWin extends AppCompatActivity
     private Intent intent;
     Button min, max, avg;
     TextView view;
+    int round;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -26,12 +27,14 @@ public class ActivityWin extends AppCompatActivity
         max = findViewById(R.id.buttonMax);         max.setText(new StringBuilder(max.getText()).append(" ").append(intent.getLongExtra("max", 0)));
         avg = findViewById(R.id.buttonAvg);         avg.setText(new StringBuilder(avg.getText()).append(" ").append(intent.getLongExtra("avg", 0)));
         view = findViewById(R.id.countFalseClick);  view.setText(new StringBuilder(view.getText()).append(" ").append(intent.getIntExtra("falseStarts", 0)));
-
+        round = intent.getIntExtra("round", 0);
 
         findViewById(R.id.buttonRepeat).setOnClickListener(
             view -> startActivity(new Intent(ActivityWin.this, ActivityRound1.class)));
 
         findViewById(R.id.buttonBack).setOnClickListener(
-            view -> startActivity(new Intent(ActivityWin.this, RoundsActivity.class).putExtra("", avg.getText())));
+            view -> startActivity(new Intent(ActivityWin.this, RoundsActivity.class).
+                         putExtra("avg", intent.getLongExtra("avg", 0)).
+                         putExtra("round", round)));
     }
 }

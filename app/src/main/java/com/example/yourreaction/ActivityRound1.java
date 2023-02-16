@@ -17,18 +17,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityRound1 extends AppCompatActivity
 {
-    private Intent intent;
+    int round = 1;
     Button buttonStart;
-    Button[] buttonMain = new Button[1];
-    Button[] buttonFalseStartCatcher = new Button[1];
+    Button[] buttonMain = new Button[round];
+    Button[] buttonFalseStartCatcher = new Button[round];
     ListView lvResults;
     ArrayAdapter<Long> adapter;
     boolean isCheater = false;
     String[] tips;
     final GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
-    final int TriesCount = 5;
-
+    final int TriesCount = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -97,7 +96,7 @@ public class ActivityRound1 extends AppCompatActivity
                                                   putExtra("max", gameResult.max()).
                                                   putExtra("min", gameResult.min()).
                                                   putExtra("falseStarts", gameResult.falseStarts).
-                                                  putExtra(ActivityRound1.class.getName(), (CharSequence) ActivityRound1.this));
+                                                  putExtra("round", round));
             return;
         }
 
@@ -129,6 +128,6 @@ public class ActivityRound1 extends AppCompatActivity
                 buttonFalseStartCatcher[index].setVisibility(View.INVISIBLE);
                 timeCounter.start();
             }
-        }, (int) ((Math.random()) * 3000 + 500));
+        }, (int) ((Math.random() * 1000 + 500)));
     }
 }
