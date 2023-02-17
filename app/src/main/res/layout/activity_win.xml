@@ -8,8 +8,9 @@
     tools:context=".ActivityWin">
 
     <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="359dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#1B1E4278"
         android:orientation="vertical"
         android:padding="10dp"
         android:weightSum="4"
@@ -34,11 +35,11 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_weight="10"
+                android:layout_weight="1"
                 android:backgroundTint="#1E4278"
                 android:text="@string/Max"
-                android:textSize="34sp"
-                app:cornerRadius="25dp"
+                android:textSize="24sp"
+                app:cornerRadius="15dp"
                 app:rippleColor="#FF6600" />
 
             <Button
@@ -51,11 +52,11 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_weight="10"
+                android:layout_weight="1"
                 android:backgroundTint="#1E4278"
                 android:text="@string/Min"
-                android:textSize="34sp"
-                app:cornerRadius="25dp"
+                android:textSize="24sp"
+                app:cornerRadius="15dp"
                 app:rippleColor="#FF6600" />
         </LinearLayout>
 
@@ -72,8 +73,8 @@
             android:layout_weight="1"
             android:backgroundTint="#1E4278"
             android:text="@string/AVG"
-            android:textSize="34sp"
-            app:cornerRadius="25dp"
+            android:textSize="24sp"
+            app:cornerRadius="15dp"
             app:rippleColor="#FF6600" />
 
         <LinearLayout
@@ -92,11 +93,11 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_weight="10"
+                android:layout_weight="1"
                 android:backgroundTint="#1E4278"
                 android:text="@string/back"
                 android:textSize="16sp"
-                app:cornerRadius="25dp"
+                app:cornerRadius="15dp"
                 app:rippleColor="#FF6600" />
 
             <Button
@@ -109,11 +110,11 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_weight="10"
+                android:layout_weight="1"
                 android:backgroundTint="#1E4278"
                 android:text="@string/repeat"
                 android:textSize="16sp"
-                app:cornerRadius="25dp"
+                app:cornerRadius="15dp"
                 app:rippleColor="#FF6600" />
         </LinearLayout>
 
@@ -124,21 +125,33 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/countFalseText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:text="@string/FailTap" />
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/FailTap"
+                android:textColor="#17345E"
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+                android:id="@+id/countFalseClick"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:text="@string/countFailTap"
-                android:textAlignment="center" />
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:textAlignment="center"
+                android:textColor="#17345E"
+                android:textSize="20sp"
+                android:visibility="visible" />
         </LinearLayout>
 
     </LinearLayout>
