@@ -23,6 +23,7 @@ public class GameResult
         for (int i = 0; i < times.size(); ++i)
             result += (long) times.get(i);
 
+
         result -= Collections.min(times);
         result -= Collections.max(times);
 
