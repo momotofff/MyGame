@@ -10,10 +10,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 // TODO: Show first screen only at first run
-// TODO: move all common game logic to separate class
-// TODO: Cover this class with unit tests bleat
 
 public class ActivityRound1 extends AppCompatActivity
 {
@@ -92,7 +89,7 @@ public class ActivityRound1 extends AppCompatActivity
                 button.setEnabled(false);
 
             startActivity(new Intent(ActivityRound1.this, ActivityWin.class).
-                                                  putExtra("avg", gameResult.avg(gameResult.times)).
+                                                  putExtra("avg", gameResult.avg()).
                                                   putExtra("max", gameResult.max()).
                                                   putExtra("min", gameResult.min()).
                                                   putExtra("falseStarts", gameResult.falseStarts).

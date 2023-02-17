@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class RoundsActivity extends AppCompatActivity
 {
     Button round1, round2, round3, round4;
@@ -27,21 +29,32 @@ public class RoundsActivity extends AppCompatActivity
         round3 = findViewById(R.id.start_round3);   result_round3 = findViewById(R.id.result_round3);
         round4 = findViewById(R.id.start_round4);   result_round4 = findViewById(R.id.result_round4);
 
-        int flag = getIntent().getIntExtra("round", 0);
+        long newAverage = intent.getLongExtra("avg", 0);
 
+        switch (getIntent().getIntExtra("round", 0))
+        {
+            case 1:
+            {
+                Long oldAverage = Long.MAX_VALUE;
+                try
+                {
+                    oldAverage = Long.parseLong(result_round1.getText().toString());
+                }
+                catch (Exception ignored) {}
 
-        if (flag == 1)
-            if (intent.getLongExtra("avg", 0) > charSequenseToLong(result_round1.getText()))
-                result_round1.setText(new StringBuilder(result_round1.getText()).append(intent.getLongExtra("avg", 0)));
+                if (oldAverage.compareTo(newAverage) > 0)
+                    result_round1.setText(String.format(Locale.getDefault(), "%d", newAverage));
 
-        else if (flag == 2)
-            result_round2.setText((int) intent.getLongExtra("avg", 0));
-
-        else if (flag == 3)
-            result_round3.setText((int) intent.getLongExtra("avg", 0));
-
-        else if (flag == 4)
-            result_round4.setText((int) intent.getLongExtra("avg", 0));
+                break;
+            }
+            case 2:
+            case 3:
+            case 4:
+            {
+                result_round1.setText(String.format(Locale.getDefault(),"%d", newAverage));
+                break;
+            }
+        }
 
         View.OnClickListener onClickListener = new View.OnClickListener()
         {
@@ -82,15 +95,4 @@ public class RoundsActivity extends AppCompatActivity
         round3.setOnClickListener(onClickListener);
         round4.setOnClickListener(onClickListener);
     }
-    private long charSequenseToLong(CharSequence cs)
-    {
-        long result = 0;
-
-        for (int i = 0; i < cs.length(); ++i)
-        {
-            result += Long.parseLong(String.valueOf(cs.charAt(i)));
-        }
-        return result;
-    }
-
 }
