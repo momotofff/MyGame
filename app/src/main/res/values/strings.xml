@@ -15,6 +15,7 @@
     <string name="back">Вернуться к выбору сложности </string>
     <string name="FailTap">Колличество ложных нажатий </string>
     <string name="countFailTap">0 </string>
+    <string name="StartChacker">Не показывать стартовый экран </string>
     <string-array name="FalseStartText">
         <item>Жулик</item>
         <item>Слишком рано</item>
