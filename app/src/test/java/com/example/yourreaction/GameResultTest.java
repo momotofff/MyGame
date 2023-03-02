@@ -1,7 +1,6 @@
 package com.example.yourreaction;
 
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 /**
@@ -9,7 +8,8 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-public class GameResultTest {
+public class GameResultTest
+{
     @Test
     public void getValues_ValidData_ExpectCorrect()
     {
@@ -35,3 +35,4 @@ public class GameResultTest {
         assertEquals(result.max(), 0L);
     }
 }
+
