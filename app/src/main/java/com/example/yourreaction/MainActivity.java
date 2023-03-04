@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+
     private SharedPreferences getPreferences()
     {
         String name = getApplicationContext().getPackageName();
