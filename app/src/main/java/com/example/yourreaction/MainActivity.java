@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,21 +11,16 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity
 {
     final String CHECKED = "CHECKED";
-    SharedPreferences sharedPreferences;
-    CheckBox startCheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        load();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button startGame = findViewById(R.id.startGame);
-        startCheckBox = findViewById(R.id.startedCheckBox);
 
+        load();
 
-
-        startGame.setOnClickListener(new View.OnClickListener()
+        findViewById(R.id.startGame).setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -38,25 +32,31 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+
+    private SharedPreferences getPreferences()
+    {
+        String name = getApplicationContext().getPackageName();
+        return getSharedPreferences(name, MODE_PRIVATE);
+    }
+
     private void save()
     {
-        sharedPreferences = getSharedPreferences("SaveGame", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+        SharedPreferences.Editor editor = getPreferences().edit();
+
+        CheckBox startCheckBox = findViewById(R.id.startedCheckBox);
         editor.putBoolean(CHECKED, startCheckBox.isChecked());
         editor.apply();
     }
 
     private void load()
     {
-        sharedPreferences = getSharedPreferences("SaveGame", MODE_PRIVATE);
-        boolean check = sharedPreferences.getBoolean(CHECKED, false);
+        SharedPreferences preferences = getPreferences();
+        boolean check = preferences.getBoolean(CHECKED, false);
 
-        if(check)
+        if (check)
         {
             Intent intent = new Intent(MainActivity.this, RoundsActivity.class);
             startActivity(intent);
         }
     }
-
-
 }
