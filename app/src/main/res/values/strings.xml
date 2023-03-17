@@ -7,15 +7,15 @@
     <string name="start_round_3">Раунд 3</string>
     <string name="start_round_4">Раунд 4</string>
     <string name="stub">-----</string>
-    <string name="start">Старт </string>
+    <string name="start">Старт</string>
     <string name="Min">Min</string>
     <string name="Max">Max</string>
     <string name="AVG">AVG</string>
-    <string name="repeat">Попробовать ещё раз </string>
-    <string name="back">Вернуться к выбору сложности </string>
-    <string name="FailTap">Колличество ложных нажатий </string>
-    <string name="countFailTap">0 </string>
-    <string name="StartChacker">Не показывать стартовый экран </string>
+    <string name="repeat">Попробовать ещё раз</string>
+    <string name="back">Вернуться к выбору сложности</string>
+    <string name="FailTap">Колличество ложных нажатий</string>
+    <string name="countFailTap">0</string>
+    <string name="StartChacker">Не показывать стартовый экран</string>
     <string-array name="FalseStartText">
         <item>Жулик</item>
         <item>Слишком рано</item>

@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class MechanicsRound
+public class RoundImplementation
 {
     int round;
     Button buttonStart;
@@ -23,7 +23,7 @@ public class MechanicsRound
     final TimeCounter timeCounter = new TimeCounter();
     final int TriesCount = 10;
 
-    public MechanicsRound(int round)
+    public RoundImplementation(int round)
     {
         this.round = round;
         buttonMain = new Button[round];
@@ -106,8 +106,7 @@ public class MechanicsRound
     {
         ++gameResult.falseStarts;
         isCheater = true;
-        Toast.makeText(activityRound.getApplicationContext(),tips[(int) (Math.random() * 5)], Toast.LENGTH_SHORT).show();
+        int tipIndex = (int) (Math.random() * tips.length);
+        Toast.makeText(activityRound.getApplicationContext(),tips[tipIndex], Toast.LENGTH_SHORT).show();
     }
-
-
 }
