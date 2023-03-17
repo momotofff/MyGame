@@ -2,6 +2,7 @@ package com.example.yourreaction;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,5 +37,12 @@ public class ActivityWin extends AppCompatActivity
             view -> startActivity(new Intent(ActivityWin.this, RoundsActivity.class).
                          putExtra("avg", intent.getLongExtra("avg", 0)).
                          putExtra("round", round)));
+
+        save();
+    }
+
+    private void save()
+    {
+        SharedPreferences.Editor editor;
     }
 }
