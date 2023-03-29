@@ -14,8 +14,6 @@ public class RoundsActivity extends AppCompatActivity
 {
     Long newAverage;
     Long loadAverage;
-    SharedPreferences sPref;
-    int[] idResRound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,7 +39,6 @@ public class RoundsActivity extends AppCompatActivity
         Intent intent = getIntent();
         newAverage = intent.getLongExtra("avg", 0);
         int round = intent.getIntExtra("round", 0);
-        idResRound = new int[]{0, R.id.result_round1, R.id.result_round2, R.id.result_round3, R.id.result_round4};
 
         switch (round)
         {
@@ -55,12 +52,11 @@ public class RoundsActivity extends AppCompatActivity
 
     private void firstLoad()
     {
-        sPref = getPreferences();
+        int[] idResRound = new int[]{0, R.id.result_round1, R.id.result_round2, R.id.result_round3, R.id.result_round4};
 
         for (int i = 1; i < idResRound.length; ++i)
         {
-            long res = sPref.getLong("round" + i, 0);
-            if (res != 0)
+            if (getPreferences().getLong("round" + i, 0) != 0)
             {
                 TextView result_round = findViewById(idResRound[i]);
                 result_round.setText(String.format(Locale.getDefault(), "%d", load(i)));
@@ -99,9 +95,7 @@ public class RoundsActivity extends AppCompatActivity
 
     private long load(int round)
     {
-        sPref = getPreferences();
-
-        return sPref.getLong("round" + round, 0);
+        return getPreferences().getLong("round" + round, 0);
     }
 
     private SharedPreferences getPreferences()
