@@ -23,8 +23,6 @@ public class ActivityRound1 extends AppCompatActivity
         impl.adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, impl.gameResult.times);
         impl.lvResults.setAdapter(impl.adapter);
 
-        load();
-
         impl.buttonStart.setOnClickListener(view -> impl.onBtnStart());
 
         for (Button button : impl.buttonMain)
@@ -32,10 +30,5 @@ public class ActivityRound1 extends AppCompatActivity
 
         for (Button button : impl.buttonFalseStartCatcher)
             button.setOnClickListener(view -> impl.onBtnFalseStart(ActivityRound1.this));
-    }
-
-    private void load()
-    {
-        // TODO: Implement
     }
 }
