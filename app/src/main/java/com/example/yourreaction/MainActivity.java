@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity
                 save();
                 Intent intent = new Intent(MainActivity.this, RoundsActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity
     private void save()
     {
         SharedPreferences.Editor editor = getPreferences().edit();
-
         CheckBox startCheckBox = findViewById(R.id.startedCheckBox);
         editor.putBoolean(CHECKED, startCheckBox.isChecked());
         editor.apply();

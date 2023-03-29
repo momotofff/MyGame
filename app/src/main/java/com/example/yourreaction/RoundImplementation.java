@@ -21,7 +21,7 @@ public class RoundImplementation
     String[] tips;
     final GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
-    final int TriesCount = 10;
+    final int TriesCount = 5;
 
     public RoundImplementation(int round)
     {
