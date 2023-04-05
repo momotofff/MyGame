@@ -21,7 +21,7 @@ public class RoundImplementation
     String[] tips;
     final GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
-    final int TriesCount = 5;
+    final int TriesCount = 10;
 
     public RoundImplementation(int round)
     {
@@ -64,7 +64,7 @@ public class RoundImplementation
                 buttonFalseStartCatcher[index].setVisibility(View.INVISIBLE);
                 timeCounter.start();
             }
-        }, (int) ((Math.random() * 1000 + 500)));
+        }, (int) ((Math.random() * 3000 + 500)));
     }
 
     public void onBtnMain(Activity activityRound)
