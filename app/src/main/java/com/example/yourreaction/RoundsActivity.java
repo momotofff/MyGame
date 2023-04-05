@@ -73,7 +73,6 @@ public class RoundsActivity extends AppCompatActivity
         {
             result_round.setText(String.format(Locale.getDefault(), "%d", newAverage));
             save(newAverage, round);
-            return;
         }
 
         if (loadAverage - newAverage >= 0  )
@@ -84,6 +83,7 @@ public class RoundsActivity extends AppCompatActivity
         else
             result_round.setText(String.format(Locale.getDefault(), "%d", loadAverage));
 
+        firstLoad();
     }
 
     private void startThisActivity(Class<?> activityRoundNumberClass)

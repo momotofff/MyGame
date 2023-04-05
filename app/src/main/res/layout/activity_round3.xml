@@ -74,7 +74,7 @@
                         app:cornerRadius="25dp"
                         app:rippleColor="#1E4278"
                         tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
-                        tools:visibility="visible"/>
+                        tools:visibility="visible" />
 
                     <Button
                         android:id="@+id/btnFalseStartCatcherRound2_1"
@@ -116,6 +116,43 @@
 
                     <Button
                         android:id="@+id/btnFalseStartCatcherRound2_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:enabled="true"
+                        android:text="@string/play"
+                        android:textSize="34sp"
+                        android:textStyle="bold"
+                        android:visibility="invisible"
+                        app:cornerRadius="25dp"
+                        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
+                        tools:visibility="visible" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/btnMainRound2_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:backgroundTint="#FF6600"
+                        android:enabled="false"
+                        android:text="@string/play"
+                        android:textSize="34sp"
+                        android:textStyle="bold"
+                        android:visibility="invisible"
+                        app:cornerRadius="25dp"
+                        app:rippleColor="#1E4278"
+                        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
+                        tools:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/btnFalseStartCatcherRound2_3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="5dp"
