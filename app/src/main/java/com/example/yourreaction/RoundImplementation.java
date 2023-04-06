@@ -90,6 +90,11 @@ public class RoundImplementation
             for (Button button : buttonFalseStartCatcher)
                 button.setEnabled(false);
 
+            if (round == 6)
+                --round;
+            if (round == 8)
+                round = round - 2;
+
             activityRound.startActivity(new Intent(activityRound, ActivityWin.class).
                     putExtra("avg", gameResult.avg()).
                     putExtra("max", gameResult.max()).
