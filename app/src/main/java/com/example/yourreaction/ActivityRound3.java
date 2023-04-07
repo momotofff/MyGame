@@ -36,5 +36,7 @@ public class ActivityRound3 extends AppCompatActivity
 
         for (Button button : impl.buttonFalseStartCatcher)
             button.setOnClickListener(view -> impl.onBtnFalseStart(ActivityRound3.this));
+
+        impl.onBack(this);
     }
 }

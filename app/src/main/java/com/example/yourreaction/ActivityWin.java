@@ -3,18 +3,17 @@ package com.example.yourreaction;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Locale;
 
 public class ActivityWin extends AppCompatActivity
 {
-    private Intent intent;
-    Button min, max, avg;
-    TextView view;
-    int round;
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,19 +21,41 @@ public class ActivityWin extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_win);
 
-        intent = getIntent();
-        min = findViewById(R.id.buttonMin);         min.setText(new StringBuilder(min.getText()).append(" ").append(intent.getLongExtra("min", 0)));
-        max = findViewById(R.id.buttonMax);         max.setText(new StringBuilder(max.getText()).append(" ").append(intent.getLongExtra("max", 0)));
-        avg = findViewById(R.id.buttonAvg);         avg.setText(new StringBuilder(avg.getText()).append(" ").append(intent.getLongExtra("avg", 0)));
-        view = findViewById(R.id.countFalseClick);  view.setText(new StringBuilder(view.getText()).append(" ").append(intent.getIntExtra("falseStarts", 0)));
-        round = intent.getIntExtra("round", 0);
+        Intent intent = getIntent();
+        setText(R.id.buttonMin, intent.getLongExtra("min", 0));
+        setText(R.id.buttonMax, intent.getLongExtra("max", 0));
+        setText(R.id.buttonAvg, intent.getLongExtra("avg", 0));
+        setText(R.id.countFalseClick, intent.getLongExtra("falseStarts", 0));
+
+        int round = intent.getIntExtra("round", 0);
+        String caller = intent.getStringExtra("caller");
 
         findViewById(R.id.buttonRepeat).setOnClickListener(
-            view -> startActivity(new Intent(ActivityWin.this, ActivityRound1.class)));
+            view -> {
+                try
+                {
+                    startActivity(new Intent(ActivityWin.this, Class.forName(caller)));
+                } catch (ClassNotFoundException e) {}
+            });
 
         findViewById(R.id.buttonBack).setOnClickListener(
             view -> startActivity(new Intent(ActivityWin.this, RoundsActivity.class).
                          putExtra("avg", intent.getLongExtra("avg", 0)).
                          putExtra("round", round)));
+
+        OnBackPressedCallback onBackPressed = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                startActivity(new Intent(ActivityWin.this, RoundsActivity.class));
+            }
+        };
+
+        this.getOnBackPressedDispatcher().addCallback(this, onBackPressed);
+    }
+
+    void setText(int id, long value)
+    {
+        TextView view = findViewById(id);
+        view.setText(String.format(Locale.getDefault(), "%s %d", view.getText(), value));
     }
 }

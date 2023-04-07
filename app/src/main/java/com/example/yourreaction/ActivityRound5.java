@@ -44,5 +44,7 @@ public class ActivityRound5 extends AppCompatActivity
 
         for (Button button : impl.buttonFalseStartCatcher)
             button.setOnClickListener(view -> impl.onBtnFalseStart(ActivityRound5.this));
+
+        impl.onBack(this);
     }
 }
