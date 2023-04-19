@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityRound3 extends AppCompatActivity
 {
-    RoundImplementation impl = new RoundImplementation(3);
+    RoundClickImplementation impl = new RoundClickImplementation(3);
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -18,12 +18,12 @@ public class ActivityRound3 extends AppCompatActivity
         setContentView(R.layout.activity_round3);
 
         impl.buttonStart = findViewById(R.id.btnStart);
-        impl.buttonMain[0] = findViewById(R.id.btnMainRound2_1);
-        impl.buttonMain[1] = findViewById(R.id.btnMainRound2_2);
-        impl.buttonMain[2] = findViewById(R.id.btnMainRound2_3);
-        impl.buttonFalseStartCatcher[0] = findViewById(R.id.btnFalseStartCatcherRound2_1);
-        impl.buttonFalseStartCatcher[1] = findViewById(R.id.btnFalseStartCatcherRound2_2);
-        impl.buttonFalseStartCatcher[2] = findViewById(R.id.btnFalseStartCatcherRound2_3);
+        impl.buttonMain[0] = findViewById(R.id.btnMainRound3_1);
+        impl.buttonMain[1] = findViewById(R.id.btnMainRound3_2);
+        impl.buttonMain[2] = findViewById(R.id.btnMainRound3_3);
+        impl.buttonFalseStartCatcher[0] = findViewById(R.id.btnFalseStartCatcherRound3_1);
+        impl.buttonFalseStartCatcher[1] = findViewById(R.id.btnFalseStartCatcherRound3_2);
+        impl.buttonFalseStartCatcher[2] = findViewById(R.id.btnFalseStartCatcherRound3_3);
         impl.tips = getResources().getStringArray(R.array.FalseStartText);
         impl.lvResults = findViewById(R.id.results);
         impl.adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, impl.gameResult.times);

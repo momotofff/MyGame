@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class RoundImplementation
+public class RoundColorImplementation
 {
     int round;
     Button buttonStart;
@@ -23,7 +23,7 @@ public class RoundImplementation
     final TimeCounter timeCounter = new TimeCounter();
     final int TriesCount = 10;
 
-    public RoundImplementation(int round)
+    public RoundColorImplementation(int round)
     {
         this.round = round;
         buttonMain = new Button[round];

@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityRound1 extends AppCompatActivity
 {
-    RoundImplementation impl = new RoundImplementation(1);
+    RoundClickImplementation impl = new RoundClickImplementation(1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

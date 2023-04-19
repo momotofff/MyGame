@@ -67,7 +67,7 @@
                         android:layout_weight="1">
 
                         <Button
-                            android:id="@+id/btnMainRound4_1"
+                            android:id="@+id/btnMainRound7_1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
@@ -83,7 +83,7 @@
                             tools:visibility="visible" />
 
                         <Button
-                            android:id="@+id/btnFalseStartCatcherRound4_1"
+                            android:id="@+id/btnFalseStartCatcherRound7_1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
@@ -105,7 +105,7 @@
                         android:layout_weight="1">
 
                         <Button
-                            android:id="@+id/btnMainRound4_2"
+                            android:id="@+id/btnMainRound7_2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
@@ -121,7 +121,7 @@
                             tools:visibility="visible" />
 
                         <Button
-                            android:id="@+id/btnFalseStartCatcherRound4_2"
+                            android:id="@+id/btnFalseStartCatcherRound7_2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
@@ -150,7 +150,7 @@
                         android:layout_weight="1">
 
                         <Button
-                            android:id="@+id/btnMainRound4_3"
+                            android:id="@+id/btnMainRound7_3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
@@ -166,7 +166,7 @@
                             tools:visibility="visible" />
 
                         <Button
-                            android:id="@+id/btnFalseStartCatcherRound4_3"
+                            android:id="@+id/btnFalseStartCatcherRound7_3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
@@ -187,7 +187,7 @@
                         android:layout_weight="1">
 
                         <Button
-                            android:id="@+id/btnMainRound4_4"
+                            android:id="@+id/btnMainRound7_4"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
@@ -203,7 +203,7 @@
                             tools:visibility="visible" />
 
                         <Button
-                            android:id="@+id/btnFalseStartCatcherRound4_4"
+                            android:id="@+id/btnFalseStartCatcherRound7_4"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
@@ -217,6 +217,89 @@
                             tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
                             tools:visibility="visible" />
                     </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/btnMainRound7_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#FF6600"
+                            android:enabled="false"
+                            android:text="@string/play"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            app:rippleColor="#1E4278"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
+                            tools:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/btnFalseStartCatcherRound7_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:enabled="true"
+                            android:text="@string/play"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
+                            tools:visibility="visible" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/btnMainRound7_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#FF6600"
+                            android:enabled="false"
+                            android:text="@string/play"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            app:rippleColor="#1E4278"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
+                            tools:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/btnFalseStartCatcherRound7_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:enabled="true"
+                            android:text="@string/play"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
+                            tools:visibility="visible" />
+                    </FrameLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
