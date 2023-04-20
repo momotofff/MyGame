@@ -2,52 +2,23 @@ package com.example.yourreaction;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Handler;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Toast;
 
-public class RoundColorImplementation
+
+public class RoundColorImplementation extends RoundClickImplementation
 {
-    int round;
-    Button buttonStart;
-    Button[] buttonMain;
-    Button[] buttonFalseStartCatcher;
-    ListView lvResults;
-    ArrayAdapter<Long> adapter;
-    boolean isCheater = false;
-    String[] tips;
-    final GameResult gameResult = new GameResult();
-    final TimeCounter timeCounter = new TimeCounter();
-    final int TriesCount = 10;
 
-    public RoundColorImplementation(int round)
+
+    public RoundColorImplementation(int round, int quantityButtons)
     {
-        this.round = round;
-        buttonMain = new Button[round];
-        buttonFalseStartCatcher = new Button[round];
+        super(round, quantityButtons);
     }
 
-    public void onBtnStart()
-    {
-        buttonStart.setEnabled(false);
-
-        for (Button button : buttonMain)
-            button.setEnabled(true);
-
-        for (Button button : buttonFalseStartCatcher)
-            button.setEnabled(true);
-
-        gameResult.clear();
-        adapter.notifyDataSetChanged();
-
-        beginNewRound();
-    }
-
-    private void beginNewRound()
-    {
+    @Override
+    public void beginNewRound() {
         for (Button button : buttonMain)
             button.setVisibility(View.INVISIBLE);
 
@@ -67,6 +38,7 @@ public class RoundColorImplementation
         }, (int) ((Math.random() * 3000 + 500)));
     }
 
+    @Override
     public void onBtnMain(Activity activityRound)
     {
         timeCounter.finish();
@@ -90,11 +62,6 @@ public class RoundColorImplementation
             for (Button button : buttonFalseStartCatcher)
                 button.setEnabled(false);
 
-            if (round == 6)
-                --round;
-            if (round == 8)
-                round = round - 2;
-
             activityRound.startActivity(new Intent(activityRound, ActivityWin.class).
                     putExtra("avg", gameResult.avg()).
                     putExtra("max", gameResult.max()).
@@ -105,13 +72,5 @@ public class RoundColorImplementation
         }
 
         beginNewRound();
-    }
-
-    public void onBtnFalseStart(Activity activityRound)
-    {
-        ++gameResult.falseStarts;
-        isCheater = true;
-        int tipIndex = (int) (Math.random() * tips.length);
-        Toast.makeText(activityRound.getApplicationContext(),tips[tipIndex], Toast.LENGTH_SHORT).show();
     }
 }

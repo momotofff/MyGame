@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityRound6 extends AppCompatActivity
 {
-    RoundClickImplementation impl = new RoundClickImplementation(8);
+    RoundClickImplementation impl = new RoundClickImplementation(6,8);
 
     @SuppressLint("MissingInflatedId")
     @Override

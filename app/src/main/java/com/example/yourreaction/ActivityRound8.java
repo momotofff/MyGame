@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityRound8 extends AppCompatActivity
 {
-    RoundClickImplementation impl = new RoundClickImplementation(8);
+    RoundClickImplementation impl = new RoundColorImplementation(8,8);
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -36,6 +36,7 @@ public class ActivityRound8 extends AppCompatActivity
         impl.buttonFalseStartCatcher[5] = findViewById(R.id.btnFalseStartCatcherRound8_6);
         impl.buttonFalseStartCatcher[6] = findViewById(R.id.btnFalseStartCatcherRound8_7);
         impl.buttonFalseStartCatcher[7] = findViewById(R.id.btnFalseStartCatcherRound8_8);
+
         impl.tips = getResources().getStringArray(R.array.FalseStartText);
         impl.lvResults = findViewById(R.id.results);
         impl.adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, impl.gameResult.times);
