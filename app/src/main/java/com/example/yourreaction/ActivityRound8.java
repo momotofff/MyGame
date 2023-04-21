@@ -1,6 +1,8 @@
 package com.example.yourreaction;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -9,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityRound8 extends AppCompatActivity
 {
-    RoundClickImplementation impl = new RoundColorImplementation(8,8);
-
+    RoundColorImplementation impl = new RoundColorImplementation(8,8);
+    Resources resources;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -18,6 +20,7 @@ public class ActivityRound8 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round8);
 
+        resources = getResources();
         impl.buttonStart = findViewById(R.id.btnStart);
         impl.buttonMain[0] = findViewById(R.id.btnMainRound8_1);
         impl.buttonMain[1] = findViewById(R.id.btnMainRound8_2);
@@ -37,6 +40,8 @@ public class ActivityRound8 extends AppCompatActivity
         impl.buttonFalseStartCatcher[6] = findViewById(R.id.btnFalseStartCatcherRound8_7);
         impl.buttonFalseStartCatcher[7] = findViewById(R.id.btnFalseStartCatcherRound8_8);
 
+        impl.colorType = getResources().getStringArray(R.array.MyColorsStr);
+        impl.getMyColors(resources);
         impl.tips = getResources().getStringArray(R.array.FalseStartText);
         impl.lvResults = findViewById(R.id.results);
         impl.adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, impl.gameResult.times);
@@ -49,5 +54,13 @@ public class ActivityRound8 extends AppCompatActivity
 
         for (Button button : impl.buttonFalseStartCatcher)
             button.setOnClickListener(view -> impl.onBtnFalseStart(ActivityRound8.this));
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(ActivityRound8.this, RoundsActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

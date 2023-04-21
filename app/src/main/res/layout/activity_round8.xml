@@ -390,7 +390,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:text="@string/help"
+            android:text="@string/help2"
             android:textAlignment="center"
             android:textColor="#1E4278"
             android:textSize="34sp"

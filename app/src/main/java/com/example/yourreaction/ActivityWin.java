@@ -37,4 +37,11 @@ public class ActivityWin extends AppCompatActivity
                          putExtra("avg", intent.getLongExtra("avg", 0)).
                          putExtra("round", round)));
     }
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(ActivityWin.this, RoundsActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }
