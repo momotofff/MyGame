@@ -1,6 +1,7 @@
 package com.example.yourreaction;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -8,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityRound2 extends AppCompatActivity
 {
-    RoundImplementation impl = new RoundImplementation(2);
+    RoundClickImplementation impl = new RoundClickImplementation(2,2);
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -36,5 +37,13 @@ public class ActivityRound2 extends AppCompatActivity
             button.setOnClickListener(view -> impl.onBtnFalseStart(ActivityRound2.this));
 
         impl.onBack(this);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(ActivityRound2.this, RoundsActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -36,7 +36,14 @@
             android:name=".ActivityRound6"
             android:screenOrientation="portrait"
             android:exported="false" />
-
+        <activity
+            android:name=".ActivityRound7"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityRound8"
+            android:screenOrientation="portrait"
+            android:exported="false" />
         <activity
             android:name=".RoundsActivity"
             android:screenOrientation="portrait"

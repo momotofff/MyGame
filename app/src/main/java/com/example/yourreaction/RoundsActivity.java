@@ -30,6 +30,8 @@ public class RoundsActivity extends AppCompatActivity
                 case R.id.start_round4: { startThisActivity(ActivityRound4.class); break; }
                 case R.id.start_round5: { startThisActivity(ActivityRound5.class); break; }
                 case R.id.start_round6: { startThisActivity(ActivityRound6.class); break; }
+                case R.id.start_round7: { startThisActivity(ActivityRound7.class); break; }
+                case R.id.start_round8: { startThisActivity(ActivityRound8.class); break; }
             }
         };
 
@@ -39,6 +41,8 @@ public class RoundsActivity extends AppCompatActivity
         findViewById(R.id.start_round4).setOnClickListener(onClickListener);
         findViewById(R.id.start_round5).setOnClickListener(onClickListener);
         findViewById(R.id.start_round6).setOnClickListener(onClickListener);
+        findViewById(R.id.start_round7).setOnClickListener(onClickListener);
+        findViewById(R.id.start_round8).setOnClickListener(onClickListener);
 
         Intent intent = getIntent();
         newAverage = intent.getLongExtra("avg", 0);
@@ -53,12 +57,15 @@ public class RoundsActivity extends AppCompatActivity
             case 4: { refreshResults(R.id.result_round4, round); break; }
             case 5: { refreshResults(R.id.result_round5, round); break; }
             case 6: { refreshResults(R.id.result_round6, round); break; }
+            case 7: { refreshResults(R.id.result_round7, round); break; }
+            case 8: { refreshResults(R.id.result_round8, round); break; }
         }
     }
 
     private void firstLoad()
     {
-        int[] idResRound = new int[]{0, R.id.result_round1, R.id.result_round2, R.id.result_round3, R.id.result_round4, R.id.result_round5, R.id.result_round6};
+        int[] idResRound = new int[]{0, R.id.result_round1, R.id.result_round2, R.id.result_round3, R.id.result_round4,
+                                        R.id.result_round5, R.id.result_round6, R.id.result_round7, R.id.result_round8};
 
         for (int i = 1; i < idResRound.length; ++i)
         {
@@ -115,5 +122,11 @@ public class RoundsActivity extends AppCompatActivity
         SharedPreferences.Editor editor = getPreferences().edit();
         editor.putLong("round" + round, newAverage);
         editor.apply();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        moveTaskToBack(true);
     }
 }

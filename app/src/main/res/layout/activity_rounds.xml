@@ -18,7 +18,10 @@
             android:id="@+id/difficulty_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
             android:text="@string/difficulty_levels"
             android:textAlignment="center"
             android:textColor="#1E4278"
@@ -202,6 +205,66 @@
                 android:layout_weight="1"
                 android:backgroundTint="#1E4278"
                 android:text="@string/start_round_6"
+                app:cornerRadius="10dp"
+                app:rippleColor="#FF6600" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/result_round7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="4"
+                android:text="@string/stub"
+                android:textAlignment="center"
+                android:textColor="#1E4278"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/start_round7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#1E4278"
+                android:text="@string/start_round_7"
+                app:cornerRadius="10dp"
+                app:rippleColor="#FF6600" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/result_round8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="4"
+                android:text="@string/stub"
+                android:textAlignment="center"
+                android:textColor="#1E4278"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/start_round8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#1E4278"
+                android:text="@string/start_round_8"
                 app:cornerRadius="10dp"
                 app:rippleColor="#FF6600" />
         </LinearLayout>

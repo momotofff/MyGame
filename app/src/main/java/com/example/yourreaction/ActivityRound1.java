@@ -1,5 +1,6 @@
 package com.example.yourreaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -7,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityRound1 extends AppCompatActivity
 {
-    RoundImplementation impl = new RoundImplementation(1);
+    RoundClickImplementation impl = new RoundClickImplementation(1,1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -32,5 +33,13 @@ public class ActivityRound1 extends AppCompatActivity
             button.setOnClickListener(view -> impl.onBtnFalseStart(ActivityRound1.this));
 
         impl.onBack(this);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(ActivityRound1.this, RoundsActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

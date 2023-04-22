@@ -1,6 +1,7 @@
 package com.example.yourreaction;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,8 @@ import java.util.Locale;
 
 public class ActivityWin extends AppCompatActivity
 {
+    static Activity activity;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,12 +34,7 @@ public class ActivityWin extends AppCompatActivity
         String caller = intent.getStringExtra("caller");
 
         findViewById(R.id.buttonRepeat).setOnClickListener(
-            view -> {
-                try
-                {
-                    startActivity(new Intent(ActivityWin.this, Class.forName(caller)));
-                } catch (ClassNotFoundException e) {}
-            });
+        view -> startActivity(new Intent(ActivityWin.this, activity.getClass())));
 
         findViewById(R.id.buttonBack).setOnClickListener(
             view -> startActivity(new Intent(ActivityWin.this, RoundsActivity.class).
@@ -57,5 +55,12 @@ public class ActivityWin extends AppCompatActivity
     {
         TextView view = findViewById(id);
         view.setText(String.format(Locale.getDefault(), "%s %d", view.getText(), value));
+    }
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(ActivityWin.this, RoundsActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -7,13 +7,17 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 
-public class RoundImplementation
+public class RoundClickImplementation
 {
+    public String[] colorsType;
+    public String[] colorsCode;
     int round;
+    int quantityButtons;
     Button buttonStart;
     Button[] buttonMain;
     Button[] buttonFalseStartCatcher;
@@ -23,13 +27,15 @@ public class RoundImplementation
     String[] tips;
     final GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
-    final int TriesCount = 5;
+    final int TriesCount = 10;
+    TextView helpColor;
 
-    public RoundImplementation(int round)
+    public RoundClickImplementation(int round, int quantityButtons)
     {
         this.round = round;
-        buttonMain = new Button[round];
-        buttonFalseStartCatcher = new Button[round];
+        this.quantityButtons = quantityButtons;
+        buttonMain = new Button[quantityButtons];
+        buttonFalseStartCatcher = new Button[quantityButtons];
     }
 
     public void onBtnStart()
@@ -48,7 +54,7 @@ public class RoundImplementation
         beginNewRound();
     }
 
-    private void beginNewRound()
+    void beginNewRound()
     {
         for (Button button : buttonMain)
             button.setVisibility(View.INVISIBLE);
@@ -92,10 +98,7 @@ public class RoundImplementation
             for (Button button : buttonFalseStartCatcher)
                 button.setEnabled(false);
 
-            if (round == 6)
-                --round;
-            if (round == 8)
-                round = round - 2;
+            ActivityWin.activity = activityRound;
 
             // TODO: Use Bundle.Serializable to pass gameResult
             // See: https://stackoverflow.com/questions/14333449/passing-data-through-intent-using-serializable
