@@ -1,9 +1,7 @@
 package com.example.yourreaction;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -12,7 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.core.content.ContextCompat;
+import androidx.activity.OnBackPressedCallback;
 
 public class RoundClickImplementation
 {
@@ -74,7 +72,7 @@ public class RoundClickImplementation
                 buttonFalseStartCatcher[index].setVisibility(View.INVISIBLE);
                 timeCounter.start();
             }
-        }, (int) ((Math.random() * 3000 + 500)));
+        }, (int) ((Math.random() * 1000 + 500)));
     }
 
     public void onBtnMain(Activity activityRound)
@@ -102,12 +100,15 @@ public class RoundClickImplementation
 
             ActivityWin.activity = activityRound;
 
+            // TODO: Use Bundle.Serializable to pass gameResult
+            // See: https://stackoverflow.com/questions/14333449/passing-data-through-intent-using-serializable
             activityRound.startActivity(new Intent(activityRound, ActivityWin.class).
                     putExtra("avg", gameResult.avg()).
                     putExtra("max", gameResult.max()).
                     putExtra("min", gameResult.min()).
                     putExtra("falseStarts", gameResult.falseStarts).
-                    putExtra("round", round));
+                    putExtra("round", round).
+                    putExtra("caller", activityRound.getClass().getName()));
             return;
         }
 
@@ -120,5 +121,17 @@ public class RoundClickImplementation
         isCheater = true;
         int tipIndex = (int) (Math.random() * tips.length);
         Toast.makeText(activityRound.getApplicationContext(),tips[tipIndex], Toast.LENGTH_SHORT).show();
+    }
+
+    public void onBack(androidx.activity.ComponentActivity owner)
+    {
+        OnBackPressedCallback onBackPressed = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                owner.startActivity(new Intent(owner, RoundsActivity.class));
+            }
+        };
+
+        owner.getOnBackPressedDispatcher().addCallback(owner, onBackPressed);
     }
 }

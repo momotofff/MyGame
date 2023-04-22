@@ -31,6 +31,8 @@ public class ActivityRound1 extends AppCompatActivity
 
         for (Button button : impl.buttonFalseStartCatcher)
             button.setOnClickListener(view -> impl.onBtnFalseStart(ActivityRound1.this));
+
+        impl.onBack(this);
     }
 
     @Override

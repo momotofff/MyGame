@@ -43,10 +43,11 @@
                 android:id="@+id/results"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:scrollbarAlwaysDrawHorizontalTrack="false"
                 android:scrollbarAlwaysDrawVerticalTrack="false"
                 android:scrollbarSize="4dp"
-                android:scrollbars="none" >
+                android:scrollbars="none">
 
             </ListView>
 
