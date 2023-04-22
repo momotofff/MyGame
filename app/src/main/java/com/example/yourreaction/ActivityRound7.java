@@ -22,6 +22,7 @@ public class ActivityRound7 extends AppCompatActivity
         setContentView(R.layout.activity_round7);
 
         resources = getResources();
+        impl.helpColor = findViewById(R.id.textView16);
         impl.buttonStart = findViewById(R.id.btnStart);
         impl.buttonMain[0] = findViewById(R.id.btnMainRound7_1);
         impl.buttonMain[1] = findViewById(R.id.btnMainRound7_2);
@@ -38,7 +39,7 @@ public class ActivityRound7 extends AppCompatActivity
         impl.buttonFalseStartCatcher[5] = findViewById(R.id.btnFalseStartCatcherRound7_6);
 
         impl.colorsType = getResources().getStringArray(R.array.MyColorsStr);
-        impl.getMyColors();
+        impl.colorsCode = getResources().getStringArray(R.array.MyColorsHTML);
         impl.tips = getResources().getStringArray(R.array.FalseStartText);
         impl.lvResults = findViewById(R.id.results);
         impl.adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, impl.gameResult.times);

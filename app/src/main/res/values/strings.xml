@@ -30,12 +30,12 @@
     </string-array>
 
     <string-array name="MyColorsStr">
-        <item>Серый</item>
+        <item>Серый</item>   // 0 - 6
         <item>Черный</item>
         <item>Красный</item>
-        <item>Синий</item>
-        <item>Голубой</item>
-        <item>Зеленый</item>
+        <item>Синий</item>   //
+        <item>Голубой</item>  // 4 - 11
+        <item>Зеленый</item>   //5 - 11
         <item>Желтый</item>
         <item>Оранжевый</item>
         <item>Фиолетовый</item>

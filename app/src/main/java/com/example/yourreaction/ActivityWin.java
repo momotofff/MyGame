@@ -1,6 +1,7 @@
 package com.example.yourreaction;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -14,6 +15,7 @@ public class ActivityWin extends AppCompatActivity
     Button min, max, avg;
     TextView view;
     int round;
+    static Activity activity;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -30,7 +32,7 @@ public class ActivityWin extends AppCompatActivity
         round = intent.getIntExtra("round", 0);
 
         findViewById(R.id.buttonRepeat).setOnClickListener(
-            view -> startActivity(new Intent(ActivityWin.this, ActivityRound1.class)));
+            view -> startActivity(new Intent(ActivityWin.this, activity.getClass())));
 
         findViewById(R.id.buttonBack).setOnClickListener(
             view -> startActivity(new Intent(ActivityWin.this, RoundsActivity.class).

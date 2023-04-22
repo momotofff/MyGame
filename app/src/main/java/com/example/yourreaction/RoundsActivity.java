@@ -60,8 +60,6 @@ public class RoundsActivity extends AppCompatActivity
             case 7: { refreshResults(R.id.result_round7, round); break; }
             case 8: { refreshResults(R.id.result_round8, round); break; }
         }
-
-
     }
 
     private void firstLoad()

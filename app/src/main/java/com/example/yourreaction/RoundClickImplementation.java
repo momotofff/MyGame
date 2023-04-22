@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
@@ -16,7 +17,7 @@ import androidx.core.content.ContextCompat;
 public class RoundClickImplementation
 {
     public String[] colorsType;
-    public String[] colorsCode = new String[12];
+    public String[] colorsCode;
     int round;
     int quantityButtons;
     Button buttonStart;
@@ -28,7 +29,8 @@ public class RoundClickImplementation
     String[] tips;
     final GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
-    final int TriesCount = 4;
+    final int TriesCount = 10;
+    TextView helpColor;
 
     public RoundClickImplementation(int round, int quantityButtons)
     {
@@ -97,6 +99,8 @@ public class RoundClickImplementation
 
             for (Button button : buttonFalseStartCatcher)
                 button.setEnabled(false);
+
+            ActivityWin.activity = activityRound;
 
             activityRound.startActivity(new Intent(activityRound, ActivityWin.class).
                     putExtra("avg", gameResult.avg()).

@@ -21,6 +21,7 @@ public class ActivityRound8 extends AppCompatActivity
         setContentView(R.layout.activity_round8);
 
         resources = getResources();
+        impl.helpColor = findViewById(R.id.textView16);
         impl.buttonStart = findViewById(R.id.btnStart);
         impl.buttonMain[0] = findViewById(R.id.btnMainRound8_1);
         impl.buttonMain[1] = findViewById(R.id.btnMainRound8_2);
@@ -40,8 +41,8 @@ public class ActivityRound8 extends AppCompatActivity
         impl.buttonFalseStartCatcher[6] = findViewById(R.id.btnFalseStartCatcherRound8_7);
         impl.buttonFalseStartCatcher[7] = findViewById(R.id.btnFalseStartCatcherRound8_8);
 
-        impl.colorType = getResources().getStringArray(R.array.MyColorsStr);
-        impl.getMyColors(resources);
+        impl.colorsType = getResources().getStringArray(R.array.MyColorsStr);
+        impl.colorsCode = getResources().getStringArray(R.array.MyColorsHTML);
         impl.tips = getResources().getStringArray(R.array.FalseStartText);
         impl.lvResults = findViewById(R.id.results);
         impl.adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, impl.gameResult.times);
