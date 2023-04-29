@@ -44,9 +44,20 @@ public class RoundsActivity extends AppCompatActivity
         findViewById(R.id.start_round7).setOnClickListener(onClickListener);
         findViewById(R.id.start_round8).setOnClickListener(onClickListener);
 
-        Intent intent = getIntent();
-        newAverage = intent.getLongExtra("avg", 0);
-        int round = intent.getIntExtra("round", 0);
+        Bundle bundle = this.getIntent().getExtras();
+        int round;
+
+        if (bundle != null)
+        {
+            GameResult gameResult = (GameResult) bundle.getSerializable("gameResult");
+            newAverage = gameResult.avg;
+            round = gameResult.round;
+        }
+        else
+        {
+            newAverage = 0l;
+            round = 0;
+        }
 
         switch (round)
         {

@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
@@ -98,12 +99,14 @@ public class RoundColorImplementation extends RoundClickImplementation
             for (Button button : buttonFalseStartCatcher)
                 button.setEnabled(false);
 
-            activityRound.startActivity(new Intent(activityRound, ActivityWin.class).
-                    putExtra("avg", gameResult.avg()).
-                    putExtra("max", gameResult.max()).
-                    putExtra("min", gameResult.min()).
-                    putExtra("falseStarts", gameResult.falseStarts).
-                    putExtra("round", round));
+            gameResult.activity = activityRound;
+            gameResult.min = gameResult.min();
+            gameResult.max = gameResult.max();
+            gameResult.avg = gameResult.avg();
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("value", gameResult);
+
+            activityRound.startActivity(new Intent(activityRound, ActivityWin.class).putExtras(bundle));
             return;
         }
 

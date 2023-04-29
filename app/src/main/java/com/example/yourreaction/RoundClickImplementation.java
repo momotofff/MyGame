@@ -2,6 +2,7 @@ package com.example.yourreaction;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -16,7 +17,6 @@ public class RoundClickImplementation
 {
     public String[] colorsType;
     public String[] colorsCode;
-    int round;
     int quantityButtons;
     Button buttonStart;
     Button[] buttonMain;
@@ -25,14 +25,14 @@ public class RoundClickImplementation
     ArrayAdapter<Long> adapter;
     boolean isCheater = false;
     String[] tips;
-    final GameResult gameResult = new GameResult();
+    GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
-    final int TriesCount = 10;
+    final int TriesCount = 5;
     TextView helpColor;
 
     public RoundClickImplementation(int round, int quantityButtons)
     {
-        this.round = round;
+        gameResult.round = round;
         this.quantityButtons = quantityButtons;
         buttonMain = new Button[quantityButtons];
         buttonFalseStartCatcher = new Button[quantityButtons];
@@ -98,17 +98,14 @@ public class RoundClickImplementation
             for (Button button : buttonFalseStartCatcher)
                 button.setEnabled(false);
 
-            ActivityWin.activity = activityRound;
+            gameResult.activity = activityRound;
+            gameResult.min = gameResult.min();
+            gameResult.max = gameResult.max();
+            gameResult.avg = gameResult.avg();
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("gameResult", gameResult);
 
-            // TODO: Use Bundle.Serializable to pass gameResult
-            // See: https://stackoverflow.com/questions/14333449/passing-data-through-intent-using-serializable
-            activityRound.startActivity(new Intent(activityRound, ActivityWin.class).
-                    putExtra("avg", gameResult.avg()).
-                    putExtra("max", gameResult.max()).
-                    putExtra("min", gameResult.min()).
-                    putExtra("falseStarts", gameResult.falseStarts).
-                    putExtra("round", round).
-                    putExtra("caller", activityRound.getClass().getName()));
+            activityRound.startActivity(new Intent(activityRound, ActivityWin.class).putExtras(bundle));
             return;
         }
 
