@@ -11,6 +11,8 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.activity.OnBackPressedCallback;
+
 
 public class RoundColorImplementation extends RoundClickImplementation
 {
@@ -104,12 +106,24 @@ public class RoundColorImplementation extends RoundClickImplementation
             gameResult.max = gameResult.max();
             gameResult.avg = gameResult.avg();
             Bundle bundle = new Bundle();
-            bundle.putSerializable("value", gameResult);
+            bundle.putSerializable("gameResult", gameResult);
 
             activityRound.startActivity(new Intent(activityRound, ActivityWin.class).putExtras(bundle));
             return;
         }
 
         beginNewRound();
+    }
+
+    public void onBack(androidx.activity.ComponentActivity owner)
+    {
+        OnBackPressedCallback onBackPressed = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                owner.startActivity(new Intent(owner, RoundsActivity.class));
+            }
+        };
+
+        owner.getOnBackPressedDispatcher().addCallback(owner, onBackPressed);
     }
 }
