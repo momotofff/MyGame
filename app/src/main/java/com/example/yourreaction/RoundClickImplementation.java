@@ -27,7 +27,7 @@ public class RoundClickImplementation
     String[] tips;
     GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
-    final int TriesCount = 5;
+    final int TriesCount = 10;
     TextView helpColor;
 
     public RoundClickImplementation(int round, int quantityButtons)
