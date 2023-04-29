@@ -45,6 +45,7 @@ public class ActivityWin extends AppCompatActivity
             @Override
             public void handleOnBackPressed() {
                 startActivity(new Intent(ActivityWin.this, RoundsActivity.class));
+                finish();
             }
         };
 
@@ -55,12 +56,5 @@ public class ActivityWin extends AppCompatActivity
     {
         TextView view = findViewById(id);
         view.setText(String.format(Locale.getDefault(), "%s %d", view.getText(), value));
-    }
-    @Override
-    public void onBackPressed()
-    {
-        Intent intent = new Intent(ActivityWin.this, RoundsActivity.class);
-        startActivity(intent);
-        finish();
     }
 }
