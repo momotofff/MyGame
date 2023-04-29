@@ -109,9 +109,4 @@ public class RoundColorImplementation extends RoundClickImplementation
 
         beginNewRound();
     }
-
-    public void getMyColors()
-    {
-
-    }
 }

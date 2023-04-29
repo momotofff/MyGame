@@ -46,17 +46,17 @@
 
     <string-array name="MyColorsHTML">
         <item>#696969</item>
-        <item>#000000</item>
-        <item>#CC0605</item>
-        <item>#0000FF</item>
-        <item>#42AAFF</item>
-        <item>#008000</item>
-        <item>#FFFF00</item>
-        <item>#FFA500</item>
-        <item>#8B00FF</item>
+        <item>#090909</item>
+        <item>#C83C28</item>
+        <item>#2828FF</item>
+        <item>#6FBEFF</item>
+        <item>#3C8028</item>
+        <item>#FFFF77</item>
+        <item>#FF9728</item>
+        <item>#A628FF</item>
         <item>#99FF99</item>
         <item>#FFC0CB</item>
-        <item>#964B00</item>
+        <item>#876128</item>
     </string-array>
 
     <string name="bigSizeText">Впервые научные наблюдения скорости человеческой реакции стали проводить в начале девятнадцатого века,и вовсе не врачи-физиологи, а, как ни странно, астрономы. Началось всё с того, что разные наблюдателизаписывали разное время пересечения звездой меридиана, хотя приборы были одинаковы и работали исправно.
