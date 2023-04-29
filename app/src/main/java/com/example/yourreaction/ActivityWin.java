@@ -15,8 +15,6 @@ import java.util.Locale;
 
 public class ActivityWin extends AppCompatActivity
 {
-    static Activity activity;
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -24,22 +22,20 @@ public class ActivityWin extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_win);
 
-        Intent intent = getIntent();
-        setText(R.id.buttonMin, intent.getLongExtra("min", 0));
-        setText(R.id.buttonMax, intent.getLongExtra("max", 0));
-        setText(R.id.buttonAvg, intent.getLongExtra("avg", 0));
-        setText(R.id.countFalseClick, intent.getLongExtra("falseStarts", 0));
+        Intent intent = this.getIntent();
+        Bundle bundle = intent.getExtras();
+        GameResult gameResult = (GameResult) bundle.getSerializable("gameResult");
 
-        int round = intent.getIntExtra("round", 0);
-        String caller = intent.getStringExtra("caller");
+        setText(R.id.buttonMin, gameResult.min);
+        setText(R.id.buttonMax, gameResult.max);
+        setText(R.id.buttonAvg, gameResult.avg);
+        setText(R.id.countFalseClick, gameResult.falseStarts);
 
         findViewById(R.id.buttonRepeat).setOnClickListener(
-        view -> startActivity(new Intent(ActivityWin.this, activity.getClass())));
+        view -> startActivity(new Intent(ActivityWin.this, gameResult.activity.getClass())));
 
         findViewById(R.id.buttonBack).setOnClickListener(
-            view -> startActivity(new Intent(ActivityWin.this, RoundsActivity.class).
-                         putExtra("avg", intent.getLongExtra("avg", 0)).
-                         putExtra("round", round)));
+            view -> startActivity(new Intent(ActivityWin.this, RoundsActivity.class).putExtras(bundle)));
 
         OnBackPressedCallback onBackPressed = new OnBackPressedCallback(true) {
             @Override
