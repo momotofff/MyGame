@@ -24,18 +24,20 @@ public class ActivityWin extends AppCompatActivity
 
         Intent intent = this.getIntent();
         Bundle bundle = intent.getExtras();
-        GameResult gameResult = (GameResult) bundle.getSerializable("gameResult");
+        GameResult gameResult = (GameResult) bundle.getSerializable(GameResult.class.getName());
 
-        setText(R.id.buttonMin, gameResult.min);
-        setText(R.id.buttonMax, gameResult.max);
-        setText(R.id.buttonAvg, gameResult.avg);
+        setText(R.id.buttonMin, gameResult.min());
+        setText(R.id.buttonMax, gameResult.max());
+        setText(R.id.buttonAvg, gameResult.avg());
         setText(R.id.countFalseClick, gameResult.falseStarts);
 
         findViewById(R.id.buttonRepeat).setOnClickListener(
-        view -> startActivity(new Intent(ActivityWin.this, gameResult.activity.getClass())));
+            view -> startActivity(new Intent(ActivityWin.this, gameResult.caller))
+        );
 
         findViewById(R.id.buttonBack).setOnClickListener(
-            view -> startActivity(new Intent(ActivityWin.this, RoundsActivity.class).putExtras(bundle)));
+            view -> startActivity(new Intent(ActivityWin.this, RoundsActivity.class).putExtras(bundle))
+        );
 
         OnBackPressedCallback onBackPressed = new OnBackPressedCallback(true) {
             @Override

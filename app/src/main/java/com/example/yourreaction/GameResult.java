@@ -7,11 +7,10 @@ import java.util.Collections;
 
 public class GameResult implements Serializable
 {
-    public transient ArrayList<Long> times = new ArrayList<>();
+    public ArrayList<Long> times = new ArrayList<>();
     public int falseStarts = 0;
-    int round;
-    long min, max, avg;
-    transient Activity activity;
+    public int round;
+    public Class<?> caller;
 
     public void clear()
     {
