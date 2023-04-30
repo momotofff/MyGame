@@ -49,13 +49,13 @@ public class RoundsActivity extends AppCompatActivity
 
         if (bundle != null)
         {
-            GameResult gameResult = (GameResult) bundle.getSerializable("gameResult");
-            newAverage = gameResult.avg;
+            GameResult gameResult = (GameResult) bundle.getSerializable(GameResult.class.getName());
+            newAverage = gameResult.avg();
             round = gameResult.round;
         }
         else
         {
-            newAverage = 0l;
+            newAverage = 0L;
             round = 0;
         }
 

@@ -98,12 +98,9 @@ public class RoundClickImplementation
             for (Button button : buttonFalseStartCatcher)
                 button.setEnabled(false);
 
-            gameResult.activity = activityRound;
-            gameResult.min = gameResult.min();
-            gameResult.max = gameResult.max();
-            gameResult.avg = gameResult.avg();
+            gameResult.caller = activityRound.getClass();
             Bundle bundle = new Bundle();
-            bundle.putSerializable("gameResult", gameResult);
+            bundle.putSerializable(gameResult.getClass().getName(), gameResult);
 
             activityRound.startActivity(new Intent(activityRound, ActivityWin.class).putExtras(bundle));
             return;
