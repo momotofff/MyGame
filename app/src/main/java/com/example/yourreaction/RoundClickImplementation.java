@@ -8,15 +8,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 
 public class RoundClickImplementation
 {
-    public String[] colorsType;
-    public String[] colorsCode;
     int quantityButtons;
     Button buttonStart;
     Button[] buttonMain;
@@ -28,7 +25,6 @@ public class RoundClickImplementation
     GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
     final int TriesCount = 10;
-    TextView helpColor;
 
     public RoundClickImplementation(int round, int quantityButtons)
     {
