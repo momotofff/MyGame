@@ -97,17 +97,22 @@ public class RoundsActivity extends AppCompatActivity
         {
             result_round.setText(String.format(Locale.getDefault(), "%d", newAverage));
             save(newAverage, round);
+            FlashClass.getFlashClass(this);
         }
 
         if (loadAverage - newAverage >= 0  )
         {
             result_round.setText(String.format(Locale.getDefault(), "%d", newAverage));
             save(newAverage, round);
+            FlashClass.getFlashClass(this);
         }
         else
             result_round.setText(String.format(Locale.getDefault(), "%d", loadAverage));
 
         firstLoad();
+
+
+
     }
 
     private void startThisActivity(Class<?> activityRoundNumberClass)
