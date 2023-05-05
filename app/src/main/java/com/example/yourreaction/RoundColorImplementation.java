@@ -46,7 +46,12 @@ public class RoundColorImplementation extends RoundClickImplementation
                 }
 
                 helpColor.setText(colorsType[startIndex]);
-                helpColor.setTextColor(Color.parseColor(colorsCode[startIndex]));
+
+                if (GameResult.round > 8)
+                    helpColor.setTextColor(Color.parseColor(colorsCode[(int) (Math.random() * colorsCode.length)]));
+                else
+                    helpColor.setTextColor(Color.parseColor(colorsCode[startIndex]));
+
                 timeCounter.start();
             }
         }, (int) ((Math.random() * 3000 + 500)));

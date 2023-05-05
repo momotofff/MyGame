@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityRound9 extends AppCompatActivity
 {
-    RoundColorImplementation impl = new RoundColorImplementation(7,6);
+    RoundColorImplementation impl = new RoundColorImplementation(9,6);
     Resources resources;
 
     @SuppressLint("MissingInflatedId")
