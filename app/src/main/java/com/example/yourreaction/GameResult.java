@@ -1,5 +1,4 @@
 package com.example.yourreaction;
-import android.app.Activity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ public class GameResult implements Serializable
 {
     public ArrayList<Long> times = new ArrayList<>();
     public int falseStarts = 0;
-    public int round;
+    public static int round;
     public Class<?> caller;
 
     public void clear()
