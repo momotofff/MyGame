@@ -2,10 +2,7 @@ package com.example.yourreaction;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -29,7 +26,8 @@ public class RoundColorImplementation extends RoundClickImplementation
         for (Button button : buttonFalseStartCatcher)
             button.setVisibility(View.VISIBLE);
 
-        for (Button button : buttonMain) button.setEnabled(true);
+        for (Button button : buttonMain)
+            button.setEnabled(true);
 
         helpColor.setText(R.string.help2);
 

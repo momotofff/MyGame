@@ -45,6 +45,10 @@
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
+            android:name=".ActivityRound9"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
             android:name=".RoundsActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
