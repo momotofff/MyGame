@@ -13,6 +13,8 @@ public class ActivityRound9 extends AppCompatActivity
 {
     RoundColorImplementation impl = new RoundColorImplementation(9,10);
     Resources resources;
+
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)

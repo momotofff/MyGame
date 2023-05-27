@@ -11,14 +11,15 @@
     <string name="start_round_7">Раунд 7</string>
     <string name="start_round_8">Раунд 8</string>
     <string name="start_round_9">Раунд 9</string>
+    <string name="start_round_10">Раунд 10</string>
     <string name="stub">-----</string>
     <string name="start">Старт</string>
     <string name="Min">Min</string>
     <string name="Max">Max</string>
-    <string name="AVG">AVG</string>
+    <string name="AVG">Averaqe</string>
     <string name="repeat">Попробовать ещё раз</string>
     <string name="back">Вернуться к выбору сложности</string>
-    <string name="FailTap">Колличество ложных нажатий</string>
+    <string name="FailTap">Количество ложных нажатий</string>
     <string name="countFailTap">0</string>
     <string name="StartChacker">Не показывать стартовый экран</string>
 
@@ -66,5 +67,5 @@
         Благодаря научному прогрессу дисциплина не стоит на месте, новые технологии с каждым годом повышают точность измерения реакции. Естественно, в этих исследованиях крайне заинтересована сфера спорта: регулярные наблюдения скорости реакции игроков ведутся в футболе, теннисе, автогонках, боксе и даже в шахматах. А где большой спорт, там теперь и киберспорт, и игровая индустрия в целом.Однако скорость реакции в спорте не равна реакции в видеоиграх, так же как она не равна и для разных игровых жанров.</string>
     <string name="play">Жми</string>
     <string name="help">Нажми на кнопку, как только она появится!</string>
-    <string name="help2">Нажми на кнопку, с указаным цветом!</string>
+    <string name="help2">Нажми на кнопку с указаным цветом!</string>
 </resources>

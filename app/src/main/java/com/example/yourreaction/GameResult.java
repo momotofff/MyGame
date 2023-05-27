@@ -1,5 +1,4 @@
 package com.example.yourreaction;
-import android.app.Activity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,11 +6,10 @@ import java.util.Collections;
 
 public class GameResult implements Serializable
 {
-    public transient ArrayList<Long> times = new ArrayList<>();
+    public ArrayList<Long> times = new ArrayList<>();
     public int falseStarts = 0;
-    int round;
-    long min, max, avg;
-    transient Activity activity;
+    public static int round;
+    public Class<?> caller;
 
     public void clear()
     {

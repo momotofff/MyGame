@@ -8,15 +8,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 
 public class RoundClickImplementation
 {
-    public String[] colorsType;
-    public String[] colorsCode;
     int quantityButtons;
     Button buttonStart;
     Button[] buttonMain;
@@ -28,11 +25,10 @@ public class RoundClickImplementation
     GameResult gameResult = new GameResult();
     final TimeCounter timeCounter = new TimeCounter();
     final int TriesCount = 10;
-    TextView helpColor;
 
     public RoundClickImplementation(int round, int quantityButtons)
     {
-        gameResult.round = round;
+        GameResult.round = round;
         this.quantityButtons = quantityButtons;
         buttonMain = new Button[quantityButtons];
         buttonFalseStartCatcher = new Button[quantityButtons];
@@ -98,12 +94,9 @@ public class RoundClickImplementation
             for (Button button : buttonFalseStartCatcher)
                 button.setEnabled(false);
 
-            gameResult.activity = activityRound;
-            gameResult.min = gameResult.min();
-            gameResult.max = gameResult.max();
-            gameResult.avg = gameResult.avg();
+            gameResult.caller = activityRound.getClass();
             Bundle bundle = new Bundle();
-            bundle.putSerializable("gameResult", gameResult);
+            bundle.putSerializable(gameResult.getClass().getName(), gameResult);
 
             activityRound.startActivity(new Intent(activityRound, ActivityWin.class).putExtras(bundle));
             return;
