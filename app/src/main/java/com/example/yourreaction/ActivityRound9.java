@@ -11,8 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityRound9 extends AppCompatActivity
 {
-    RoundColorImplementation impl = new RoundColorImplementation(9,6);
+    RoundColorImplementation impl = new RoundColorImplementation(9,10);
     Resources resources;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -30,6 +31,10 @@ public class ActivityRound9 extends AppCompatActivity
         impl.buttonMain[3] = findViewById(R.id.btnMainRound9_4);
         impl.buttonMain[4] = findViewById(R.id.btnMainRound9_5);
         impl.buttonMain[5] = findViewById(R.id.btnMainRound9_6);
+        impl.buttonMain[6] = findViewById(R.id.btnMainRound9_7);
+        impl.buttonMain[7] = findViewById(R.id.btnMainRound9_8);
+        impl.buttonMain[8] = findViewById(R.id.btnMainRound9_9);
+        impl.buttonMain[9] = findViewById(R.id.btnMainRound9_10);
 
         impl.buttonFalseStartCatcher[0] = findViewById(R.id.btnFalseStartCatcherRound9_1);
         impl.buttonFalseStartCatcher[1] = findViewById(R.id.btnFalseStartCatcherRound9_2);
@@ -37,6 +42,10 @@ public class ActivityRound9 extends AppCompatActivity
         impl.buttonFalseStartCatcher[3] = findViewById(R.id.btnFalseStartCatcherRound9_4);
         impl.buttonFalseStartCatcher[4] = findViewById(R.id.btnFalseStartCatcherRound9_5);
         impl.buttonFalseStartCatcher[5] = findViewById(R.id.btnFalseStartCatcherRound9_6);
+        impl.buttonFalseStartCatcher[6] = findViewById(R.id.btnFalseStartCatcherRound9_7);
+        impl.buttonFalseStartCatcher[7] = findViewById(R.id.btnFalseStartCatcherRound9_8);
+        impl.buttonFalseStartCatcher[8] = findViewById(R.id.btnFalseStartCatcherRound9_9);
+        impl.buttonFalseStartCatcher[9] = findViewById(R.id.btnFalseStartCatcherRound9_10);
 
         impl.colorsType = getResources().getStringArray(R.array.MyColorsStr);
         impl.colorsCode = getResources().getStringArray(R.array.MyColorsHTML);

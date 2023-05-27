@@ -83,6 +83,7 @@ public class RoundsActivity extends AppCompatActivity
     {
         int[] idResRound = new int[]{0, R.id.result_round1, R.id.result_round2, R.id.result_round3, R.id.result_round4,
                                         R.id.result_round5, R.id.result_round6, R.id.result_round7, R.id.result_round8,
+                                        R.id.result_round9};
                                         R.id.result_round9, R.id.result_round10};
 
         for (int i = 1; i < idResRound.length; ++i)

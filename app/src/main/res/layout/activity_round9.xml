@@ -27,6 +27,11 @@
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="10"
+            android:backgroundTint="#1E4278"
+            android:text="@string/start"
+            android:textSize="34sp"
+            app:cornerRadius="25dp"
+            app:rippleColor="#FF6600" />
             android:backgroundTint="@color/buttonColorBlue"
             android:shadowColor="@color/shadow"
             android:shadowDx="2"
@@ -36,6 +41,7 @@
             android:textSize="34sp"
             app:cornerRadius="25dp"
             app:rippleColor="@color/buttonColorOrange" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,11 +53,16 @@
                 android:id="@+id/results"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+                android:scrollbarAlwaysDrawVerticalTrack="false"
+                android:scrollbarSize="4dp"
+                android:scrollbars="none" >
                 android:layout_margin="5dp"
                 android:scrollbarAlwaysDrawHorizontalTrack="false"
                 android:scrollbarAlwaysDrawVerticalTrack="false"
                 android:scrollbarSize="4dp"
                 android:scrollbars="none">
+
 
             </ListView>
 
@@ -64,8 +75,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
+
+                    android:orientation="horizontal">
                     android:orientation="horizontal"
                     android:baselineAligned="false">
+
 
                     <FrameLayout
                         android:layout_width="match_parent"
@@ -77,6 +91,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
+
+                            android:backgroundTint="#913939"
+                            android:backgroundTintMode="add"
+                            android:enabled="false"
+
                             android:backgroundTint="@color/buttonColorOrange"
                             android:backgroundTintMode="add"
                             android:enabled="false"
@@ -84,13 +103,18 @@
                             android:shadowDx="2"
                             android:shadowDy="2"
                             android:shadowRadius="2"
+
                             android:text="@string/play"
                             android:textColor="@color/white"
                             android:textSize="24sp"
                             android:textStyle="bold"
                             android:visibility="invisible"
                             app:cornerRadius="25dp"
+
+                            app:rippleColor="#1E4278"
+
                             app:rippleColor="@color/buttonColorBlue"
+
                             tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
                             tools:visibility="visible" />
 
@@ -121,6 +145,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
+
+                            android:backgroundTint="#913939"
+                            android:enabled="false"
+                            android:text="@string/play"
+                            android:textColor="@color/white"
+                            android:backgroundTintMode="add"
+
                             android:backgroundTint="@color/buttonColorOrange"
                             android:backgroundTintMode="add"
                             android:enabled="false"
@@ -130,11 +161,16 @@
                             android:shadowRadius="2"
                             android:text="@string/play"
                             android:textColor="@color/white"
+
                             android:textSize="24sp"
                             android:textStyle="bold"
                             android:visibility="invisible"
                             app:cornerRadius="25dp"
+
+                            app:rippleColor="#1E4278"
+
                             app:rippleColor="@color/buttonColorBlue"
+
                             tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
                             tools:visibility="visible" />
 
@@ -160,8 +196,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
+
+                    android:orientation="horizontal">
+
                     android:orientation="horizontal"
                     android:baselineAligned="false">
+
 
                     <FrameLayout
                         android:layout_width="match_parent"
@@ -173,6 +213,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
+
+                            android:backgroundTint="#913939"
+                            android:enabled="false"
+                            android:text="@string/play"
+                            android:textColor="@color/white"
+                            android:backgroundTintMode="add"
+
                             android:backgroundTint="@color/buttonColorOrange"
                             android:backgroundTintMode="add"
                             android:enabled="false"
@@ -182,11 +229,16 @@
                             android:shadowRadius="2"
                             android:text="@string/play"
                             android:textColor="@color/white"
+
                             android:textSize="24sp"
                             android:textStyle="bold"
                             android:visibility="invisible"
                             app:cornerRadius="25dp"
+
+                            app:rippleColor="#1E4278"
+
                             app:rippleColor="@color/buttonColorBlue"
+
                             tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
                             tools:visibility="visible" />
 
@@ -216,6 +268,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
+
+                            android:backgroundTint="#913939"
+                            android:enabled="false"
+                            android:text="@string/play"
+                            android:textColor="@color/white"
+                            android:backgroundTintMode="add"
+
                             android:backgroundTint="@color/buttonColorOrange"
                             android:backgroundTintMode="add"
                             android:enabled="false"
@@ -226,11 +285,16 @@
                             android:shadowRadius="2"
                             android:text="@string/play"
                             android:textColor="@color/white"
+
                             android:textSize="24sp"
                             android:textStyle="bold"
                             android:visibility="invisible"
                             app:cornerRadius="25dp"
+
+                            app:rippleColor="#1E4278"
+
                             app:rippleColor="@color/buttonColorBlue"
+
                             tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
                             tools:visibility="visible" />
 
@@ -255,8 +319,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
+
+                    android:orientation="horizontal">
+
                     android:orientation="horizontal"
                     android:baselineAligned="false">
+
 
                     <FrameLayout
                         android:layout_width="match_parent"
@@ -268,20 +336,17 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
-                            android:backgroundTint="@color/buttonColorOrange"
-                            android:backgroundTintMode="add"
+
+                            android:backgroundTint="#913939"
                             android:enabled="false"
-                            android:shadowColor="@color/shadow"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="2"
                             android:text="@string/play"
                             android:textColor="@color/white"
+                            android:backgroundTintMode="add"
                             android:textSize="24sp"
                             android:textStyle="bold"
                             android:visibility="invisible"
                             app:cornerRadius="25dp"
-                            app:rippleColor="@color/buttonColorBlue"
+                            app:rippleColor="#1E4278"
                             tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
                             tools:visibility="visible" />
 
@@ -299,6 +364,104 @@
                             app:cornerRadius="25dp"
                             tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
                             tools:visibility="visible" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/btnMainRound9_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#913939"
+                            android:enabled="false"
+                            android:text="@string/play"
+                            android:textColor="@color/white"
+                            android:backgroundTintMode="add"
+                            android:backgroundTint="@color/buttonColorOrange"
+                            android:backgroundTintMode="add"
+                            android:enabled="false"
+                            android:shadowColor="@color/shadow"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="@string/play"
+                            android:textColor="@color/white"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            app:rippleColor="#1E4278"
+                            app:rippleColor="@color/buttonColorBlue"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
+                            tools:visibility="visible" />
+
+                        <Button
+
+                            android:id="@+id/btnFalseStartCatcherRound9_6"
+                            android:id="@+id/btnFalseStartCatcherRound9_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:enabled="true"
+                            android:text="@string/play"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
+                            tools:visibility="visible" />
+
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/btnMainRound9_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#913939"
+                            android:enabled="false"
+                            android:text="@string/play"
+                            android:textColor="@color/white"
+                            android:backgroundTintMode="add"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            app:rippleColor="#1E4278"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
+                            tools:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/btnFalseStartCatcherRound9_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:enabled="true"
+                            android:text="@string/play"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
+                            tools:visibility="visible" />
 
                     </FrameLayout>
 
@@ -308,6 +471,62 @@
                         android:layout_weight="1">
 
                         <Button
+
+                            android:id="@+id/btnMainRound9_8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#913939"
+                            android:enabled="false"
+                            android:text="@string/play"
+                            android:textColor="@color/white"
+                            android:backgroundTintMode="add"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            app:rippleColor="#1E4278"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
+                            tools:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/btnFalseStartCatcherRound9_8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:enabled="true"
+                            android:text="@string/play"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
+                            tools:visibility="visible" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/btnMainRound9_9"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#913939"
+                            android:enabled="false"
+                            android:text="@string/play"
+                            android:textColor="@color/white"
+                            android:backgroundTintMode="add"
                             android:id="@+id/btnMainRound9_6"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -325,11 +544,14 @@
                             android:textStyle="bold"
                             android:visibility="invisible"
                             app:cornerRadius="25dp"
+
+                            app:rippleColor="#1E4278"
                             app:rippleColor="@color/buttonColorBlue"
                             tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
                             tools:visibility="visible" />
 
                         <Button
+                            android:id="@+id/btnFalseStartCatcherRound9_9"
                             android:id="@+id/btnFalseStartCatcherRound9_6"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -345,6 +567,45 @@
                             tools:visibility="visible" />
                     </FrameLayout>
 
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/btnMainRound9_10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#913939"
+                            android:enabled="false"
+                            android:text="@string/play"
+                            android:textColor="@color/white"
+                            android:backgroundTintMode="add"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            app:rippleColor="#1E4278"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck"
+                            tools:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/btnFalseStartCatcherRound9_10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:enabled="true"
+                            android:text="@string/play"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            app:cornerRadius="25dp"
+                            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck"
+                            tools:visibility="visible" />
+                    </FrameLayout>
                 </LinearLayout>
 
             </LinearLayout>
@@ -355,6 +616,8 @@
             android:id="@+id/textView16"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
+            android:layout_weight="10"
             android:layout_margin="5dp"
             android:layout_weight="10"
             android:shadowColor="#80000000"
