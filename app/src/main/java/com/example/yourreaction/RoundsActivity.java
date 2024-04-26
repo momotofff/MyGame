@@ -33,7 +33,6 @@ public class RoundsActivity extends AppCompatActivity
                 case R.id.start_round7: { startThisActivity(ActivityRound7.class); break; }
                 case R.id.start_round8: { startThisActivity(ActivityRound8.class); break; }
                 case R.id.start_round9: { startThisActivity(ActivityRound9.class); break; }
-                case R.id.start_round10: { startThisActivity(ActivityRound10.class); break; }
             }
         };
 
@@ -46,7 +45,6 @@ public class RoundsActivity extends AppCompatActivity
         findViewById(R.id.start_round7).setOnClickListener(onClickListener);
         findViewById(R.id.start_round8).setOnClickListener(onClickListener);
         findViewById(R.id.start_round9).setOnClickListener(onClickListener);
-        findViewById(R.id.start_round10).setOnClickListener(onClickListener);
 
         Bundle bundle = this.getIntent().getExtras();
         int round;
@@ -75,7 +73,6 @@ public class RoundsActivity extends AppCompatActivity
             case 7: { refreshResults(R.id.result_round7, round); break; }
             case 8: { refreshResults(R.id.result_round8, round); break; }
             case 9: { refreshResults(R.id.result_round9, round); break; }
-            case 10: { refreshResults(R.id.result_round10, round); break; }
         }
     }
 
@@ -84,7 +81,6 @@ public class RoundsActivity extends AppCompatActivity
         int[] idResRound = new int[]{0, R.id.result_round1, R.id.result_round2, R.id.result_round3, R.id.result_round4,
                                         R.id.result_round5, R.id.result_round6, R.id.result_round7, R.id.result_round8,
                                         R.id.result_round9};
-                                        R.id.result_round9, R.id.result_round10};
 
         for (int i = 1; i < idResRound.length; ++i)
         {

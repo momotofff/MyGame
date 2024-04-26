@@ -32,7 +32,7 @@ public class ActivityWin extends AppCompatActivity
         setText(R.id.countFalseClick, gameResult.falseStarts);
 
         findViewById(R.id.buttonRepeat).setOnClickListener(
-            view -> startActivity(new Intent(ActivityWin.this, gameResult.caller))
+            view -> startActivity(new Intent(ActivityWin.this, gameResult.caller).putExtras(bundle))
         );
 
         findViewById(R.id.buttonBack).setOnClickListener(
