@@ -1,11 +1,9 @@
 package com.example.yourreaction;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Handler;
-import android.view.View;
 
 public class FlashClass
 {
@@ -57,7 +55,7 @@ public class FlashClass
 
     private static void startFlash()
     {
-        for(int i = 0; i < 200; ++i)
+        for(int i = 0; i < 50; ++i)
         {
             new Handler().postDelayed(new Runnable()
             {
@@ -69,7 +67,7 @@ public class FlashClass
                     else
                         flashON();
                 }
-            }, 1);
+            }, 5);
         }
 
     }
