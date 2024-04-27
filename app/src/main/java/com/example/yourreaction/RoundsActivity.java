@@ -1,5 +1,7 @@
 package com.example.yourreaction;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -8,6 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.yandex.mobile.ads.banner.BannerAdEventListener;
+import com.yandex.mobile.ads.banner.BannerAdSize;
+import com.yandex.mobile.ads.banner.BannerAdView;
+import com.yandex.mobile.ads.common.AdRequest;
+import com.yandex.mobile.ads.common.AdRequestError;
+import com.yandex.mobile.ads.common.ImpressionData;
+
 import java.util.Locale;
 
 public class RoundsActivity extends AppCompatActivity
@@ -15,11 +24,41 @@ public class RoundsActivity extends AppCompatActivity
     Long newAverage;
     Long loadAverage;
 
+    private BannerAdView mBannerAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rounds);
+
+        mBannerAdView = (BannerAdView) findViewById(R.id.banner);
+        mBannerAdView.setAdUnitId("R-M-7893449-1");
+        mBannerAdView.setAdSize(BannerAdSize.stickySize(this, 1000));
+
+        final AdRequest adRequest = new AdRequest.Builder().build();
+
+        mBannerAdView.setBannerAdEventListener(new BannerAdEventListener() {
+            @Override
+            public void onImpression(@Nullable ImpressionData impressionData) {}
+
+            @Override
+            public void onAdFailedToLoad(@NonNull AdRequestError adRequestError) {}
+
+            @Override
+            public void onAdClicked() {}
+
+            @Override
+            public void onAdLoaded() {}
+            @Override
+            public void onLeftApplication() {}
+
+            @Override
+            public void onReturnedToApplication() {}
+        });
+
+        mBannerAdView.loadAd(adRequest);
+
 
         @SuppressLint("NonConstantResourceId") View.OnClickListener onClickListener = view -> {
             switch (view.getId())
@@ -142,8 +181,8 @@ public class RoundsActivity extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
+        super.onBackPressed();
         moveTaskToBack(true);
     }
 }
