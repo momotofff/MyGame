@@ -41,8 +41,8 @@ public class ActivityRound3 extends AppCompatActivity
         impl.onBack(this);
     }
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
+        super.onBackPressed();
         Intent intent = new Intent(ActivityRound3.this, RoundsActivity.class);
         startActivity(intent);
         finish();

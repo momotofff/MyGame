@@ -9,18 +9,83 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.yandex.mobile.ads.banner.BannerAdEventListener;
+import com.yandex.mobile.ads.banner.BannerAdSize;
+import com.yandex.mobile.ads.banner.BannerAdView;
+import com.yandex.mobile.ads.common.AdRequest;
+import com.yandex.mobile.ads.common.AdRequestError;
+import com.yandex.mobile.ads.common.ImpressionData;
 
 import java.util.Locale;
 
 public class ActivityWin extends AppCompatActivity
 {
+    private BannerAdView mBannerAdView;
+    private BannerAdView mBannerAdView2;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_win);
+
+        mBannerAdView = (BannerAdView) findViewById(R.id.banner2);
+        mBannerAdView.setAdUnitId("R-M-7893449-2");
+        mBannerAdView.setAdSize(BannerAdSize.stickySize(this, 1000));
+
+        mBannerAdView2 = (BannerAdView) findViewById(R.id.banner3);
+        mBannerAdView2.setAdUnitId("R-M-7893449-2");
+        mBannerAdView2.setAdSize(BannerAdSize.stickySize(this, 1000));
+
+        final AdRequest adRequest = new AdRequest.Builder().build();
+
+
+        mBannerAdView.setBannerAdEventListener(new BannerAdEventListener() {
+            @Override
+            public void onImpression(@Nullable ImpressionData impressionData) {}
+
+            @Override
+            public void onAdFailedToLoad(@NonNull AdRequestError adRequestError) {}
+
+            @Override
+            public void onAdClicked() {}
+
+            @Override
+            public void onAdLoaded() {}
+            @Override
+            public void onLeftApplication() {}
+
+            @Override
+            public void onReturnedToApplication() {}
+        });
+
+        mBannerAdView.loadAd(adRequest);
+
+        mBannerAdView2.setBannerAdEventListener(new BannerAdEventListener() {
+            @Override
+            public void onImpression(@Nullable ImpressionData impressionData) {}
+
+            @Override
+            public void onAdFailedToLoad(@NonNull AdRequestError adRequestError) {}
+
+            @Override
+            public void onAdClicked() {}
+
+            @Override
+            public void onAdLoaded() {}
+            @Override
+            public void onLeftApplication() {}
+
+            @Override
+            public void onReturnedToApplication() {}
+        });
+
+        mBannerAdView2.loadAd(adRequest);
 
         Intent intent = this.getIntent();
         Bundle bundle = intent.getExtras();
@@ -38,6 +103,7 @@ public class ActivityWin extends AppCompatActivity
         findViewById(R.id.buttonBack).setOnClickListener(
             view -> startActivity(new Intent(ActivityWin.this, RoundsActivity.class).putExtras(bundle))
         );
+
 
         OnBackPressedCallback onBackPressed = new OnBackPressedCallback(true) {
             @Override
