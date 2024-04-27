@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     tools:context=".RoundsActivity" >
 
     <LinearLayout
         android:id="@+id/difficulty_rounds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:fadeScrollbars="false"
-        android:isScrollContainer="false"
-        android:nestedScrollingEnabled="false"
+        android:layout_marginBottom="5dp"
         android:orientation="vertical"
+        android:weightSum="10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="UselessParent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/difficulty_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
@@ -44,7 +44,9 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="2">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -401,13 +403,58 @@
                         app:cornerRadius="10dp"
                         app:rippleColor="#FF6600" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/result_round10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="4"
+                        android:shadowColor="@color/shadow"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="2"
+                        android:text="@string/stub"
+                        android:textAlignment="center"
+                        android:textColor="#1E4278"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/start_round10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#1E4278"
+                        android:shadowColor="@color/shadow"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="2"
+                        android:text="@string/start_round_10"
+                        android:textSize="20sp"
+                        app:cornerRadius="10dp"
+                        app:rippleColor="#FF6600" />
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
+
         <LinearLayout
             android:id="@+id/view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible" >
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:visibility="visible">
 
             <com.yandex.mobile.ads.banner.BannerAdView
                 android:id="@+id/banner"
@@ -415,5 +462,6 @@
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
         </LinearLayout>
+
     </LinearLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

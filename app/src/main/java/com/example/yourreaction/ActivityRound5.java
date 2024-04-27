@@ -50,8 +50,8 @@ public class ActivityRound5 extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
+        super.onBackPressed();
         Intent intent = new Intent(ActivityRound5.this, RoundsActivity.class);
         startActivity(intent);
         finish();
