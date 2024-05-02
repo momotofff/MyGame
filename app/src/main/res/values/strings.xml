@@ -16,7 +16,7 @@
     <string name="start">Старт</string>
     <string name="Min">Min</string>
     <string name="Max">Max</string>
-    <string name="AVG">Averaqe</string>
+    <string name="AVG">Average</string>
     <string name="repeat">Попробовать ещё раз</string>
     <string name="back">Вернуться к выбору сложности</string>
     <string name="FailTap">Количество ложных нажатий</string>

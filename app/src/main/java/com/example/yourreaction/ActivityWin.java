@@ -1,11 +1,8 @@
 package com.example.yourreaction;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.OnBackPressedCallback;
@@ -25,7 +22,6 @@ import java.util.Locale;
 public class ActivityWin extends AppCompatActivity
 {
     private BannerAdView mBannerAdView;
-    private BannerAdView mBannerAdView2;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -35,12 +31,8 @@ public class ActivityWin extends AppCompatActivity
         setContentView(R.layout.activity_win);
 
         mBannerAdView = (BannerAdView) findViewById(R.id.banner2);
-        mBannerAdView.setAdUnitId("R-M-7893449-2");
+        mBannerAdView.setAdUnitId("R-M-7893449-1");
         mBannerAdView.setAdSize(BannerAdSize.stickySize(this, 1000));
-
-        mBannerAdView2 = (BannerAdView) findViewById(R.id.banner3);
-        mBannerAdView2.setAdUnitId("R-M-7893449-2");
-        mBannerAdView2.setAdSize(BannerAdSize.stickySize(this, 1000));
 
         final AdRequest adRequest = new AdRequest.Builder().build();
 
@@ -65,27 +57,6 @@ public class ActivityWin extends AppCompatActivity
         });
 
         mBannerAdView.loadAd(adRequest);
-
-        mBannerAdView2.setBannerAdEventListener(new BannerAdEventListener() {
-            @Override
-            public void onImpression(@Nullable ImpressionData impressionData) {}
-
-            @Override
-            public void onAdFailedToLoad(@NonNull AdRequestError adRequestError) {}
-
-            @Override
-            public void onAdClicked() {}
-
-            @Override
-            public void onAdLoaded() {}
-            @Override
-            public void onLeftApplication() {}
-
-            @Override
-            public void onReturnedToApplication() {}
-        });
-
-        mBannerAdView2.loadAd(adRequest);
 
         Intent intent = this.getIntent();
         Bundle bundle = intent.getExtras();

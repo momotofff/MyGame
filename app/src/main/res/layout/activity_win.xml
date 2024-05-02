@@ -16,13 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp">
-
-        <com.yandex.mobile.ads.banner.BannerAdView
-            android:id="@+id/banner3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="-3dp" />
     </LinearLayout>
 
     <LinearLayout
